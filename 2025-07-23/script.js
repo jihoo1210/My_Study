@@ -9,10 +9,39 @@ $(function(){
         $(".categorybox").fadeToggle("fast");
     });
     $(".img-best-box").hover(function(){
-        $(this).toggleClass("scaleup");
-        $(this).find(".shadow-bg").fadeToggle("slow");
+        $(this).toggleClass("scaleup filter-brightness");
     });
+    $(".best-btn .shoping-icon").mouseenter(function(){
+        $(this).find("i").addClass("ri-shopping-bag-fill").removeClass("ri-shopping-bag-line");
+    }).mouseleave(function(){
+        $(this).find("i").removeClass("ri-shopping-bag-fill").addClass("ri-shopping-bag-line");
+    })
+        $(".best-btn .heart-icon").mouseenter(function(){
+        $(this).find("i").addClass("ri-heart-2-fill").removeClass("ri-heart-2-line");
+    }).mouseleave(function(){
+        $(this).find("i").removeClass("ri-heart-2-fill").addClass("ri-heart-2-line");
+    })
 
+    const navTopHeight = $(".navigation").offset().top * 2;
+    $(window).on("scroll", function(){
+        if($(this).scrollTop() > 45){
+            $(".navigation").css({
+                "position": "fixed",
+                "top": "45px",
+                "width": "100%"
+            });
+            $("body").css({
+                "paddingTop": navTopHeight + "px"
+            })
+        }else{
+            $(".navigation").css({
+                "position": "static"
+            });
+            $("body").css({
+                "paddingTop": 30 + "px"
+            })
+        };
+    });
 });
 
 
