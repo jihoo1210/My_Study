@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 100px auto;
+}
+.t1 {
+    transform: skew(30deg);
+    transition: all 2s linear;
+    transform-origin: middle;
+}

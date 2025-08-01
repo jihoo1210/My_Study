@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        .container{
+            border: 1px solid black;
+            width: 420px;
+            margin: 50px auto;
+        }
+        .float{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+        .a{background-color: blue; float: left;}
+        .b{background-color: green; float: left;}
+        .c{background-color: red; float: left;}
+        .clear::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+         */
+        /*
+        ul{
+            list-style-type:none;
+            padding:0;
+            width:250px;
+            border:1px solid #333;
+        }
+        li{
+            border-bottom:1px dashed #333;
+            cursor:pointer;
+        }
+        li img{
+            width:60px;
+            height:60px;
+            vertical-align: middle;
+        }
+        li.border-none{
+            border:none;
+        }
+        li span{
+            display:inline-block;
+            height:60px;
+            margin-left:10px;
+            margin-top:0;
+        }
+        .none{
+            display: none;
+        }
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 90%;
+            background-color: lightgray;
+            margin: 50px auto;
+        }
+        .container::after{
+            content: '';
+            display: table;
+            clear: left;
+        }
+        .card{
+            padding: 10px;
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            position: relative;
+        }
+        .card h1{
+            line-height: 30px;
+        }
+        .blue{
+            border: 1px solid skyblue;
+            color: skyblue;
+        }
+        .green{
+            border: 1px solid greenyellow;
+            color: greenyellow;
+        }
+        .red{
+            border: 1px solid tomato;
+            color: tomato;
+        }
+        .yellow{
+            border: 1px solid yellow;
+            color: yellow;
+        }
+        .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: white;
+        border: 1px solid currentColor;
+        line-height: 50px;
+        position: absolute;
+        top: -25px;
+        left: calc(50% - 25px);
+        box-shadow: 0px 2px 4px rgba(0,0,0,0.3), 0px 0 15px rgba(0,0,0,0.15);
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        .box1{
+            float: left;
+            padding: 10px;
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    <ul class="game">
+        <li id="1"><img src="../images/001.png" alt="강화"> <span>강화운세 보기</span></li>
+        <li id="2"><img src="../images/002.png" alt="득템"> <span>득템운세 보기</span></li>
+        <li class="border-none" id="3"><img src="../images/003.png" alt="뽑기"><span>뽑기운세 보기</span></li>
+    </ul>
+    <script>
+        let one = document.querySelector('.game');
+        one.addEventListener('click', function(){ 
+            let score = Math.random();
+            if(score <= 0.3){
+                alert(`운이 좋아요~`);
+            } else if(0.3 < score && score <= 0.6){
+                alert(`운이 보통이요~`);
+            } else if(0.6 < score){
+                alert(`운이 안좋아요~`);
+            }
+        })
+    </script>
+    -->
+    <!--
+    <div class="container clear">
+    <div class="a float"></div>
+    <div class="b float"></div>
+    <div class="c float"></div>
+    <div class="clear"></div>
+    </div>
+    -->
+    <div class="container">
+        <div class="blue box1">
+            <div class="card">
+            <div class="circle blue">
+                <p>icon</p>
+            </div>
+            <p>Cars</p><h1>234</h1></div>
+            </div>
+        <div class=" green box1">
+            <div class="card">
+            <div class="circle green">
+                <p>icon</p>
+            </div>
+            <p>Eyes</p><h1>9332</h1></div>
+            </div>
+        <div class=" red box1">
+            <div class="card">
+            <div class="circle red">
+                <p>icon</p>
+            </div>
+            <p>Hearts</p><h1>346</h1></div>
+            </div>
+        <div class=" yellow box1">
+            <div class="card">
+            <div class="circle yellow">
+                <p>icon</p>
+            </div>
+            <p>inbox</p><h1>346</h1></div>
+            </div>
+    </div>
+</body>
+</html>

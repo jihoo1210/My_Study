@@ -1,0 +1,26 @@
+h1 {
+    width: 1000px;
+    margin: 30px auto;
+    border: 5px solid #333;
+}
+.linear {
+    width: 500px;
+    height: 200px;
+    background-image: linear-gradient(to right, #e63af6 10%,#b6dcff 50%, #72beff 100%);
+}
+.rainbow {
+    width: 800px;
+    height: 500px;
+    background-image: linear-gradient(to right, red, orange, yellow, green, skyblue, blue, purple);
+}
+.boxShadow {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: yellow;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.35);
+}
+.textShadow {
+    margin: 20px;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <script>
+        let url;
+        switch(prompt("가려는 사이트 이름을 입력하시오.")){
+            case "google":
+                url = "www.google.com";
+                break;
+            case "naver":
+                url = "www.naver.com";
+                break;
+            default:
+            alert("google 또는 naver를 입력해주세요.");
+            location.reload();
+            break;
+        }
+       if(url){
+        location.href = "https://" + url;
+       } 
+    </script>
+    -->
+    <script>
+        let a = Number(prompt("첫 번째 숫자를 입력하시오"));
+        let b = Number(prompt("두 번째 숫자를 입력하시오"));
+        let c = prompt("어떤 연산을 하시겠습니까?");
+        let result;
+        if(!isNaN(a) && !isNaN(b)){
+            if( c == "+" || c == "-" || c == "*" || c == "/"){
+            switch(c){
+            case "+":
+                result = a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "*":
+                result = a * b;
+                break;
+            case "/":
+                result = a / b;
+                break;
+            }
+            alert(result);
+        } else {
+            result = a + b;
+            alert(`+, -, *, / 중에서 입력해야 합니다.\n기본 연산자인 +로 계산한 결과입니다: ` + result);
+        }
+        let re = confirm("다시 하시겠습니까?");
+        if(re){
+        location.reload();}
+        else {alert("종료합니다")}
+    }
+    </script>
+</body>
+</html>

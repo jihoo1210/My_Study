@@ -1,0 +1,19 @@
+body {
+    background-color: lightgray;
+}
+h1 {
+    color: black;
+}
+p {
+    background-color: gray;
+    color:white;
+}
+dl {
+    background-color: antiquewhite;
+    color: black;
+}
+li:nth-child(even) {
+    background-color:lightgrey;
+    color: black;
+    font-weight: bold;
+}

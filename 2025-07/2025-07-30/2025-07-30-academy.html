@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.min.css">
+
+    <script src="../../../bootstrap/js/jquery-1.12.4.min.js"></script>
+    <script src="../../../bootstrap/js/popper.min.js"></script>
+    <script src="../../../bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 30px auto;
+        }
+
+        .tab {
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            width: 100px;
+            height: auto;
+            background-color: aquamarine;
+            text-decoration: none !important;
+            color: black;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        .seoul {
+            background-color: red;
+        }
+
+        .paris {
+            background-color: blue;
+        }
+
+        .london {
+            background-color: yellow;
+        }
+
+        .tab-content {
+            background-color: wheat;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<!-- 탭 메뉴 만들기 -->
+
+<body>
+    <h1>탭 메뉴</h1>
+    <p>클릭하면 바뀌는 탭</p>
+
+    <div class="container">
+        <div class="tab">
+            <div class="d-flex flex-row">
+                <a href="javascript:void(0)" class="tab-links" onclick="v_city(event, 'seoul')">Seoul</a>
+                <p class="tab-content" id="seoul">3</p>
+            </div>
+            <div class="d-flex flex-row">
+                <a href="javascript:void(0)" class="tab-links" onclick="v_city(event, 'paris')">Paris</a>
+                <p class="tab-content" id="paris">1</p>
+            </div>
+            <div class="d-flex flex-row">
+                <a href="javascript:void(0)" class="tab-links" onclick="v_city(event, 'london')">London</a>
+                <p class="tab-content" id="london">2</p>
+            </div>
+        </div>  
+    </div>
+    <script>
+        function v_city(e, city) {
+            let i, tabContent;
+            tabContent = document.querySelectorAll('.tab-content');
+            tabLinks = document.querySelectorAll('.tab-links');
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            for (i = 0; i < tabContent.length; i++) {
+                tabLinks[i].classList.remove("seoul", "paris", "london");
+            }
+            document.querySelector(`#${city}`).style.display = "block";
+        }
+        window.onload = v_city();
+    </script>
+    <!-- <h1 id="h1"></h1>
+    <p id="test"></p>
+    <script>
+        const s = location.search;
+        document.querySelector("#test").innerHTML = s;
+        const info = navigator.userAgent.toLowerCase();
+        let os = null;
+        if(info.indexOf('windows') > -1){
+            os = "윈도우";
+        } else if(info.indexOf('macintosh') > -1){
+            os = "애플";
+        } else if(info.indexOf("iphone") > -1){
+            os = "아이폰"
+        } else if(info.indexOf("android") > -1){
+            os = "안드로이드";
+        };
+        const scw = screen.width;
+        const sch = screen.height;
+        const scc = screen.colorDepth;
+
+        const ifv = `<p>${os}  + ${info}  + ${scw}  + ${sch}  + ${scc}</p>`
+        document.querySelector("#h1").innerHTML = ifv;
+    </script> -->
+
+</html>

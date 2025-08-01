@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap app</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      type="images/x-icon"
+      href="../../../images/buffalo.ico"
+    />
+    <!-- <link rel="icon" sizes="32x32" href="../../../images/Untitled-6.jpg"> -->
+    <link rel="apple-touch-icon" href="../../../images/buffalo.ico" />
+    <!-- 애플 전용 파비콘 -->
+    <!-- style -->
+    <link rel="stylesheet" href="../css/font.css" />
+    <!-- remixicon cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- animation link -->
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/2025-07-22-style-academy.css" />
+    <!-- script -->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <!-- jQuery는 첫 번째로 쓴다 -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header class="jumbotron text-center" style="margin: 0">
+      <h1>신지, 에바에 타라</h1>
+      <p>
+        서기 2000년, 인류는 미증유의 대재앙 세컨드 임팩트에 직면한다. 남극에
+        광속에 가까운 속도로 소형 운석이 충돌하여 일어난 이 사건은 남극의 얼음을
+        융해시키고 지구 자전축을 뒤틀었다. 그 결과 기아, 내전, 전쟁 등의
+        요소까지 겹쳐 세계 인구의 절반이 순식간에 절멸했다. 그로부터 15년의
+        시간이 흐르고 2015년, 하코네의 지하 요새 도시 제3신동경시에는 사도라는
+        정체불명의 적이 습격해온다. 이 사도라는 정체불명의 적은 세컨드 임팩트에
+        이어 서드 임팩트를 발생시켜 전 인류를 지구 상에서 없애고자 하였다. 이에
+        국제 연합(UN)군은 모든 무기를 동원하여 총공세를 펼치나 어떤 수단도
+        사도에게 피해를 주지 못했고, 모든 작전권을 네르프라고 하는 산하 비밀
+        조직에 넘긴다. 그리하여 네르프가 꺼낸 사도에 대항할 최후의 카드가 바로
+        비밀 병기, 에반게리온이었다. 네르프로 온 14살 소년 이카리 신지는 어릴 때
+        헤어진 자신의 아버지, 네르프 총 사령관 이카리 겐도를 만난다. 처음엔
+        에반게리온에 타는 것을 거부했지만, 자기 대신 에바에 타야 했던 부상을
+        입은 아야나미 레이를 보고 측은지심을 느낀 신지는 마지못해 에반게리온의
+        파일럿이 된다. 이후 신지는 새 보금자리에서 여러 사람들을 마주한다.
+        에반게리온 때문에 동생이 다쳤다며 다짜고짜 화내며 주먹을 날리는 스즈하라
+        토우지, 밀덕에 특촬물 마니아 아이다 켄스케, 활달한 성격 뒤로 상처를
+        숨기고 살아가는 신지의 새로운 보호자인 카츠라기 미사토, 첫 만남부터
+        정체불명이었던 아야나미 레이, 자존심 강한 소류 아스카 랑그레이 등...
+        이들과 만나고 겪는 다양한 사건들로 신지는 자신의 정체성에 대해 고민하고,
+        진실이라는 이름의 거짓에 가려진 이면의 비밀에 한 발짝 다가서게 되며,
+        최종적으로 세계를 이해하고 내면의 성장을 이룩한다.
+      </p>
+    </header>
+    <!-- jumbotron = 큰 글씨 및 색깔 박스 -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand"><i class="ri-robot-2-fill"></i></a>
+        <button
+          class="navbar-toggle"
+          type="button"
+          data-toggle="collapse"
+          data-target="#myNav"
+        >
+          <i class="ri-robot-2-fill"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="myNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link" type="#">about</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" type="#">produce</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" type="#">work</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" type="#">contact</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" type="#">command</a>
+            </li>
+          </ul>
+          <form action="" class="form-inline my-2 my-lg-0">
+            <input
+              type="search"
+              class="form-control mr-sm-2"
+              placeholder="search"
+            />
+            <button submit class="btn btn-success my-2 my-sm-2">검색</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar = 가로로 만들어지는 내비게이션 -->
+    <!-- navbar-expand = 내비게이션 크기 -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>ABOUT HIM</h2>
+          <p>Photo of he</p>
+          <div class="img">
+            <img
+              src="../../../images/zGTyYG0ddvErIpnN12qC4AYnAc3X0KSHgwWyae9TlSRaBow_nlCj4CVEwygkt7ew_KDgyoKKAt53xjOi9sMSa4nJ_l86z1J4I1Ij8CduD0xDpJnrblv4gxWSmBYYdIXuodRMMglYKQ6VBUbMdt6amw.webp"
+              alt="me"
+            />
+          </div>
+          <p class="py-3">
+            서기 2000년, 인류는 미증유의 대재앙 세컨드 임팩트에 직면한다. 남극에
+            광속에 가까운 속도로 소형 운석이 충돌하여 일어난 이 사건은 남극의
+            얼음을 융해시키고 지구 자전축을 뒤틀었다.
+          </p>
+          <h2>ABOUT IT</h2>
+          <p>Photo of it</p>
+          <div class="img">
+            <img
+              src="../../../images/jAcQuW--ywpHN61XiD1QC-Wjx3e3aoVnD4qVRAAW-wM_6tgLGIjrqvXe17bqSWsTX9I-r2gMFO9lUZXxzQyIrt-sdJxTPTub9eKc0N2YGtCwKbrg2g-TOzyY0PBahINm7jJBbZ9tjyinnJ9GQOdOug.webp"
+              alt="me"
+            />
+          </div>
+          <p class="pt-3">
+            초호기 사진.
+          </p>
+          <ul class="list-group">
+            <li
+              class="list-group-item d-flex justify-content-between align-item-center"
+            >
+              <i class="ri-robot-2-fill"></i>링크 1
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-item-center"
+            >
+              <i class="ri-robot-2-fill"></i>링크 2
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-item-center"
+            >
+              <i class="ri-robot-2-fill"></i>링크 3
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-item-center"
+            >
+              <i class="ri-robot-2-fill"></i>링크 4
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-8">
+          <h2 class="bg-danger text-dark">세컨드 임팩트의 현실성과 그 피해량에 대하여</h2>
+          <p>2025-7-22</p>
+          <div class="imgBox">
+            <img
+              src="../../../images/Hbbb14LyXIjZMNQKQJQb72CzidV56ArebHN8Xr45aMitCnmntVJVjxnM2Xa5cqT28lQdJmaccJlAeBO_dnV3VGZALPEv7asTiEKG9F9wQq27GWtcd9ww2r6r7rzeuUTu7gk5B3a1tWte-6fpH9hFfw.webp"
+              alt="세컨트 임팩트 사진"
+              class="sImg"
+            />
+          </div>
+          <p>출처: NERV</p>
+          <div class="container jumbotron">
+            <h3>사건 개요: 2000년 9월 13일, 세계가 무너진 날</h3>
+            <p>
+              2000년 9월 13일, 남극 대륙 중심부에서 기록된 초대형 폭발은 지구
+              자전축을 6도 가까이 기울게 만들었다.이로 인해 발생한 해수면 상승,
+              지진, 기후 붕괴, 대규모 난민 사태, 그리고 이후 수년 간의 지역
+              분쟁과 핵 충돌은 아직까지도 인류 문명에 깊은 상처를 남기고
+              있다.<span class="badge bg-primary">국제연합(UN)</span> 공식 통계에 따르면, 직간접적 사망자는 약 <span class="badge bg-danger">20억</span>
+              명에 이르며, 남반구 인구의 <span class="badge bg-danger">1/3</span>이 삶의 터전을 잃었다.
+            </p>
+          </div>
+          <div class="container jumbotron">
+            <h3>과학계의 새로운 접근: ‘자연재해’인가, ‘실험 실패’인가</h3>
+            <p>
+              20년 넘게 ‘대형 소행성 충돌설’이 정설처럼 받아들여져 왔지만, 최근
+              일본 NERV 연구소 내부 문건이 유출되며 세컨드 임팩트가 인위적으로
+              유발된 실험이었다는 주장이 급부상하고 있다. 서울대학교 지구과학과
+              김태균 교수는 다음과 같이 분석한다: “자연적 운석 충돌로 남극
+              대륙의 절반이 증발하고, 지구 자전축이 기울 만큼의 에너지가
+              발생하는 건 거의 불가능합니다. 이건 대규모 반물질 폭발에
+              가깝습니다.” 한편, 유출된 문서 중 일부는 당시 실험 대상이
+              ‘사도(使徒)로 불린 생명체’였음을 암시하고 있으며, 해당 개체와의
+              접촉 실험이 폭발의 원인이었다는 가설이 국제 과학계에서 점점 더
+              신뢰를 얻고 있다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

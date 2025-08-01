@@ -1,0 +1,5 @@
+2025-07-28-academy.yml
+github-key.txt
+# 깃에서 무시할 파일 주소 작성
+# 최상위 폴더에서 모든 파일 선택 /file.c
+# 확장자 선택 *.txt

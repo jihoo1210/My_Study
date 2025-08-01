@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 50px;
+            transition: transform 1s ease-in-out;
+        }
+        .box:hover {
+            transform: scale(1.5, 1.5);
+        }
+        .card {
+            width: 200px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 50px;
+        }
+        .card img {
+            transition: transform 0.3s ease;
+        }
+        .card:hover img{
+            transform: scale(1.1);
+        }
+        .btn {
+            background-color: greenyellow;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 50px;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .nav-item {
+            display: inline-block;
+            position: relative;
+            padding: 10px;
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: skyblue;
+            transition: all 300ms linear;
+            transform-origin: center;
+            transform: scaleX(0);
+        }
+        .nav-item:hover::after {
+            transform: scaleX(1);
+        }
+        .box:hover{
+            transform: rotate(45deg);
+        }
+        .center {
+            transform-origin: center center;
+        }
+        .top-left {
+            transform-origin: top left;
+        }
+        .bottom-right {
+            transform-origin: bottom right;
+        }
+        .ani {
+            width: 200px;
+            height: 200px;
+            animation: aniname 5s 0.5s forwards infinite;
+            background: red;
+            position: relative;
+        }
+        @keyframes aniname {
+            from{background: red; left: 0; top: 0;}
+            25%{background: yellow; left: 200px; top: 0;}
+            50%{background: green; left: 200px; top: 200px;}
+            75%{background: blue; left: 0; top: 200px;}
+            to{background: red; left: 0; top: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="card">
+        <img src="https://picsum.photos/id/250/200/250" alt="pic">
+    </div>
+        <button class="btn">Click me</button>
+        <div class="nav-item">Home</div>
+        <div class="nav-item">Back</div>
+        <div class="box center"></div>
+        <div class="box top-left"></div>
+        <div class="box bottom-right"></div>
+        <div class="ani"></div>
+</body>
+</html>

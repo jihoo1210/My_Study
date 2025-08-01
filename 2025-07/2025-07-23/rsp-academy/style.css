@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #cacaca;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+h1 {
+    margin: 10px 0;
+}
+.head-container{
+    width: 800px;
+    height: 400px;
+    margin: 50px 0;
+    position: relative;
+    display: none;
+}
+.select-box {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    border: 3px solid #333;
+    top: 0;
+}
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.result {
+    font-size: 30px;
+    font-weight: bold;
+}
+.center.score {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.user, .com {
+    margin: 110px auto;
+    width: 155px;
+    height: 180px;
+}
+.container {
+    width: 800px;
+    padding: 40px;
+    padding-top: 0;
+    border: 3px solid #333;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+button.back {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 10%;
+}
+.btn {
+    background-color: antiquewhite;
+    border: 2px solid #333;
+    width: 30%;
+    margin-top: 10px;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: transform 0.1s linear;
+}
+.btn:active {
+    transform: scale(0.98);
+}
+.rsp {
+    width: 170px;
+    height: 180px;
+    display: none;
+    cursor: pointer;
+}
+.rock {
+    background: url(./gawebawebo.png) no-repeat -169px 0;
+    width: 170px;
+}
+.scissors {
+    width: 155px;
+    background: url(./gawebawebo.png) no-repeat;
+}
+.paper {
+    width: 180px;
+    background: url(./gawebawebo.png) no-repeat -340px;
+}

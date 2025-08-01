@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css2.css">
+    <style>
+        /**Flex Problem*/
+        .container{
+            display: flex;
+            gap: 10;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .image{
+            flex-basis: 32%;
+        }
+        .image img{
+            width: 100%;
+        }
+        @media screen and (min-width:769px) and (max-width:1024px) {
+            .image{
+                flex-basis: 49%;
+            }
+        }
+        @media screen and (max-width:768px){
+            .image{
+                flex-basis: 90%
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">        
+<img src="/a/001.jpg" alt="1">
+    </div>
+        <div class="image">        
+<img src="/a/a-1/002.jpg" alt="2">
+    </div>
+        <div class="image">       
+<img src="/a/a-1/a-1-1/003.jpg" alt="3">
+    </div>
+    </div>
+</body>
+</html>

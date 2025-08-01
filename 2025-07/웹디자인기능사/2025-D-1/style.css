@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: #333;
+}
+.main-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+.sub-container {
+    display: grid;
+    grid-template-rows: 400px 450px;
+}
+/* header */
+header {
+    border: 1px solid black;
+}
+.gnb {
+    margin-top: 50px;
+}
+.gnb a {
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.gnb>li {
+    overflow: hidden;
+}
+.gnb>li>a {
+    border: 1px solid #333;
+    font-size: 1.3em;
+}
+.lnb {
+    max-height: 0;
+    transition: max-height 1s ease;
+    overflow: hidden;
+}
+.lnb a {
+    border: 1px solid #333;
+    border-top: none;
+    border-bottom: none;
+    font-size: 0.9em;
+    padding: 0 0.5em;
+    padding-bottom: none;
+}
+.lnb>li:last-child a {
+    padding-bottom: 0.5em;
+}
+.gnb>li a {
+    border-bottom: none;
+}
+.lnb>li:not(:last-child) a::after {
+    content: '';
+    display: table;
+    width: 80%;
+    height: 1px;
+    background-color: blueviolet;
+    margin-left: calc(20%/2);
+    margin-top: 0.5em;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+.gnb>li:hover .lnb {
+    max-height: 500px;
+}
+.gnb li:hover>a, .spot-menu a:hover{
+    background-color: blueviolet;
+    color: #333;
+    font-weight: bold;
+}
+.gnb li:hover .lnb a::after{
+    transform: scale(1);
+}
+.spot-menu {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    text-align: center;
+    border-top: 1px solid #333;
+    grid-template-columns: 49.5% 1% 49.5%;
+}
+.line {
+    width: 2px;
+    height: 100%;
+    background-color: #333;
+    margin: 0 auto;
+}
+/* slide */
+.slide {
+    border: 1px solid #333;
+    border-left: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.slideInBox{
+    width: 400%;
+    /* width와 height값은 상속되지 않음. 반드시 코드로 작성해야 동일한 width값과 height값을 얻을 수 있음 */
+    height: 100%;
+    transition: all 1s linear;
+}
+.slideInBox div {
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+.slide-1 {
+    background-image: url(../../../images/Untitled-14.jpg) ;
+    background-size: cover;
+    background-position: top;
+}
+.slide-2 {
+    background-image: url(../../../images/Untitled-15.jpg) ;
+    background-size: cover;
+    background-position: top;
+}
+.slide-3 {
+    background-image: url(../../../images/Untitled-16.jpg) ;
+    background-size: cover;
+    background-position: top;
+}
+.slide-4 {
+    background-image: url(../../../images/Untitled-14.jpg) ;
+    background-size: cover;
+    background-position: top;
+}
+/* contents */
+.contents {
+    display: grid;
+    grid-template-rows: 200px 250px;
+}
+/* banner */
+.banner {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-bottom: none;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    overflow: hidden;
+}
+.banner-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.banner-img img {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+.banner-text {
+    padding: 0 50px;
+    margin-top: 15px;
+}
+/* announcement */
+.announcement{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-top: 1px dotted black;
+}
+.c1-tab {
+    position: absolute;
+    display: block;
+    border: 1px solid black;
+    border-bottom: none;
+}
+.c2-tab {
+    position: absolute;
+    display: block;
+}
+.c1 {
+    margin: 50px auto;
+    height: 170px;
+    width: 95%;
+    border: 1px solid black;
+    position: relative;
+}
+.c2-content {
+    display: none;
+}
+footer {
+    width: 100%;
+    height: 100px;
+}

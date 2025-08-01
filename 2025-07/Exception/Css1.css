@@ -1,0 +1,59 @@
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+table {
+  width: 100%;
+  caption-side: bottom;
+}
+td,
+th {
+  padding: 10px;
+}
+
+.title1 {
+  color: #ff0000;
+  font-size: 1.5em;
+  text-align: center;
+}
+.paragraph1 {
+  font-size: 1.2em;
+  line-height: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+.accent {
+  color: #0000ff;
+}
+.smalltext {
+  font-size: 0.7em;
+  color: purple;
+  text-align: center;
+}
+.bgblack {
+  background-color: black;
+  color: white;
+}
+.travelCard {
+  width: 250px;
+  height: 340px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+}
+.cardImg {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.cardText {
+  text-align: center;
+}
+.left {
+  float: left;
+}

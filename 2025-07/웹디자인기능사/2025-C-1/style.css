@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+}
+.container {
+    display: flex;
+    width: 1000px;
+    height: 650px;
+    flex-wrap: wrap;
+    /* 전체 컨테이너, 첫 번째 flex */
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    /* flex 세로 방향 배치 */
+    /* 두 번째 컨테이너 */
+    width: 800px;
+}
+.block {
+    display: block;
+}
+.none {
+    display: none;
+}
+.overflow {
+    overflow-y: scroll;
+}
+body {
+    text-align: center;
+    background-color: #fff;
+}
+/* nav */
+nav {
+    /* 총 크기 설정 */
+    width: 200px;
+    height: 650px;
+    border: 1px solid #333;
+}
+.logo {
+    width: 200px;
+    height: 100px;
+    padding: 30px 0 0 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+.gnb {
+    /* 넓이 설정 및 가운데 정렬 */
+    width: 180px;
+    height: auto;
+    margin: 50px auto;
+}
+.gnb>li {
+    /* 현재 높이 값 = a / 왜냐하면 높이 값을 지닌 유일한 자식 요소이기 때문  */
+    /* 호버시 lnb의 높이값이 커지면서 gnb>li의 높이값이 커지면 lnb가 보이게 된다 */
+    /* lnb의 높이값이 점점 커지기 때문에 요소들도 점점 보이게 됨 */
+    overflow: hidden;
+}
+.gnb>li>a {
+    display: block;
+    /* 전체 크기를 차지하도록 */
+    font-size: 30px;
+    /* 패딩이나 마진은 오버플로우 때문에 사용할 수 없다 */
+    border: 1px solid #333;
+}
+.lnb {
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #333;
+    border-top: none;
+    border-bottom: none;
+    max-height: 0;
+    /* 최대 높이 또는 최대 높이보다 작을 경우 실제 높이 */
+    transition: max-height 0.3s ease;
+}
+.lnb li:not(:last-child) a::after {
+    position: absolute;
+    content: '';
+    display: table;
+    transform: scale(0);
+    width: 90%;
+    height: 1px;
+    background: black;
+    bottom: 0;
+    left: 9px;
+    /* 가운데 정렬 */
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    /* 가운데에서 시작 */
+}
+.gnb>li:last-child .lnb {
+    border-bottom: 1px solid #333;
+}
+.lnb>li>a {
+    display: block;
+    /* 요소에 꽉 차게 */
+    padding: 5px 0;
+}
+.gnb>li:hover .lnb {
+    max-height: 240px;
+}
+.gnb>li:hover .lnb li a::after {
+    transform: scale(1);
+}
+ul.gnb>li:hover>a, .lnb li:hover a { 
+    background-color: #333; 
+    color: #fff;
+    font-weight: bold;
+}
+/* header */
+header {
+    text-align: start;
+    /* 사진 왼쪽 정렬 */
+    width: 800px;
+    height: 350px;
+    position: relative;
+}
+.slide {
+    position: absolute;
+    inset: 0;
+    /* top, bottom, left, right = 0 */
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* 불투명도 0 = 투명도 1 */
+    transition: all 2s ease;
+}
+.slide.active {
+    opacity: 1;
+    /* 불투명도 1 = 투명도 0 */
+    z-index: 1;
+    /* 앞으로 끌어오기 */
+}
+/* article */
+article {
+    width: 800px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 그리드 3등분 */
+}
+.c1, .c2, .c3 {
+    /* 콘텐츠 크기 및 높이 설정 */
+    width: 100%;
+    height: 200px;
+}
+.c1 a {
+    display: block;
+}
+.btn {
+    display: flex;
+}
+.announcement, .gallery {
+    width: 50%;
+    max-height: 1.5em;
+    border: 1px solid #333;
+}
+
+#announcement-con {
+    text-align: left;
+    /* 왼쪽 정렬 */
+}
+#gallery-con {
+    margin-top: 40px;
+}
+.bg {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+}
+.c2 img{
+    width: 100%;
+    height: 200px;
+}
+/* footer */
+footer {
+    width: 800px;
+    height: 100px;
+    display: flex;
+    /* 플렉스 기본값: row, nowrap */
+}
+.footer-logo {
+    width: 200px;
+    height: 100px;
+}
+.copy {
+    width: 600px;
+    height: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    border: 1px solid #333;
+    border-bottom: none;
+}
+.footer-menu {
+    height: 50px;
+    line-height: 50px;
+    width: 600px;
+    border: 1px solid #333;
+}

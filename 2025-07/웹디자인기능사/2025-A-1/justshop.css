@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    color: #222328;
+    text-decoration: none;
+    text-align: center;
+}
+body {
+    background-color: #fff;
+    width: 1200px;
+    margin: 50px auto 0;
+    border: 1px solid black;
+}
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+/* logo */
+.logo {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    cursor: pointer;
+}
+/* gnb */
+.gnb {
+    display: flex;
+    justify-content: start;
+    background-color: #fff;
+    z-index: 10;
+    position: relative;
+}
+.gnb a {
+    line-height: 100px;
+    display: block;
+    width: 200px;
+    border: 1px solid black;
+}
+.lnb {
+    bottom: 0;
+    position: absolute;
+    width: 200px;
+    z-index: -2;
+    transition: transform 0.5s ease-in-out;
+    background-color: #fff;
+}
+.lnb li {
+    padding: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    cursor: pointer;
+}
+.lnb li:last-child {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.lnb li:not(:last-child)::after {
+    content: '';
+    display: table;
+    width: 50px;
+    height: 1px;
+    margin: 20px auto 0;
+    background-color: black;
+}
+.gnb li:hover a     {
+    font-weight: bolder;
+}
+.gnb>ul>li>ul li:hover {
+    font-weight: bolder;
+}
+.gnb:hover .lnb {
+    display: block;
+    transform: translateY(100%);
+}
+/* lnb 가리기 박스 */
+.box {
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: #fff;
+}
+/* main-section */
+.main-section {
+    width: 100%;
+    height: 300px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.main-section div[class*=img]{
+    width: 100%;
+    height: 300px;
+}
+.slide {
+    animation: 9s infinite slide linear;
+    font-size: 100px;
+}
+/* slide */
+.slide div {
+    color: #fff;
+    line-height: 300px;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);
+}
+@keyframes slide {
+      0% {transform: translateY(0);}
+      16%{transform: translateY(-300px);}
+      33%{transform: translateY(-300px);}
+      49%{transform: translateY(-600px);}
+      66%{transform: translateY(-600px);}
+      82%{transform: translateY(-900px);}
+      100%{transform: translateY(-900px);}
+}
+.img-1 {
+    background: url(../../images/슬라이드1.jpg);
+}
+.img-2 {
+    background:  url(../../images/슬라이드2.jpg);
+}
+.img-3 {
+    background:  url(../../images/슬라이드3.jpg);
+}
+/* sub-section */
+.sub-section {
+    width: 1200PX;
+    height: 200px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+/* sub-menu-1 */
+.c1 {
+    grid-column: 1 / 2;
+    border: 1px solid black;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+/* 탭 버튼 */
+.alert {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+.gal {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+/* 탭 내부 */
+.text1 {
+    grid-column: 1 / 3;
+    grid-row: 2 / -1;
+}
+.c1 .gal-img {
+    grid-column: 1 / 3;
+    grid-row: 2 / -1;
+    display: none;
+}
+.gal-img div img{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 16px;
+}
+/* sub-menu-2 */
+.c2 {
+    grid-column: 2 / 3;
+    border: 1px solid black;
+    background-image: url(../../images/예제.jpg);
+    background-size: cover;
+}
+/* sub-menu-3 */
+.c3 { 
+    grid-column: 3 / 4;
+    border: 1px solid black;
+    line-height: 197.33px;
+}
+.c3 a {
+    display: block;
+}
+.c3 a:hover {
+    background-color: #222328;
+    color: #fff;
+}
+/* footer */
+footer .left {
+    float: left;
+    margin: 60px 0 0 0;
+}
+footer .right {
+    float: right;
+    margin: 60px 0 0 0;
+}
+.cop {
+    width: calc(1200px - 400px);
+    margin: 0 auto;
+    height: 100px;
+    text-align: left;
+    padding: 25px;
+    border: 1px solid black;
+}

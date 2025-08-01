@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+.main-content{
+    width: 900px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card{
+    width: 20%;
+    height: 350px;
+    margin: 10px;
+    border: rgba(0, 0, 0, 0.1) 1px solid;
+}
+.card .img{
+    height: 60%;
+    width: 100%;
+    background-image: url(/img/wosingteon-dc-lipeul-legting-pul-yeop-namu-aebinyu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card .content{
+    text-align: left;
+    padding: 10px 14px 0;
+    font-size: 0.1em;
+}
+.card hr{
+    width: 80%;
+}
+.a1{
+    color: black;
+}
+.a1:hover {
+    color: green;
+}
+.a1:visited{
+    color: blue;
+}

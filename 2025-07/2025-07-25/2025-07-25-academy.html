@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="email" name="email">
+    <button type="button" onclick="check()">제출</button>
+
+    <!-- <script>
+        const name = prompt("현재 공부하고 있는 프로그래밍 언어를 입력해주시오");
+        const upperName = name.toUpperCase();
+        document.writeln(upperName);
+
+        const number = prompt("전화번호를 입력하시오");
+        const delNumber = number.substring(0, number.length - 4) + "****";
+        document.writeln(delNumber);
+    </script> -->
+    <script>
+        function check(){
+            let input = document.querySelector("#email").value;
+            let dom = ["com", "co,kr", "org", "or.kr", "go.kr", "net", "pe.kr"];
+            let run = false;
+            if(input.indexOf("@") == -1){
+                alert("@를 입력해주시오.");
+            }
+            if(input.indexOf(".") == -1){
+                alert(".을입력해주시오.");
+            }
+            let domPart = input.indexOf(".") + 1;
+            for(let i of dom){
+                if(input.includes(i, domPart) == true){
+                    break;
+                } else {
+                    run = true;
+                    break;
+                }
+            }
+            if(run){
+                alert("정확한 도메인 주소를 입력하시오.");
+                run = false;
+            }
+        }
+        // location.href="https://naver.com";
+    </script>
+    <div id="clock">00:00:00</div>
+    <script>
+        function date1() {
+            const now = new Date();
+            let hour = now.getHours();
+            let min = now.getMinutes();
+            let sec = now.getSeconds();
+
+            const current = `${hour}:${min}:${sec}`;
+            document.querySelector("#clock").innerText = current;
+        }
+        setInterval(date1, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+/* flex */
+.flexBox{
+    display: flex;
+    /* 부모 요소에 display: flex;지정 */
+    justify-content: space-around;
+    /* justify-content속성은 플렉스 항목이 주축(수평)에서 사용 가능한 모든 공간을 사용하지 않을 때 해당 항목을 정렬하는 데 사용됩니다. */
+    align-items: flex-start;
+    /* align-items속성은 플렉스 항목이 교차축(수직)에서 사용 가능한 모든 공간을 사용하지 않을 때 해당 항목을 정렬하는 데 사용됩니다. */
+    flex-flow: row nowrap;
+    /*왼쪽에서 오른쪽으로 진행, 줄 넘김 허용 */
+}
+.flexBox li {
+    border: 1px solid black;
+    width: 20%;
+    /* flex 내부 요소 크기 지정 */
+}
+/* grid */
+.gridBox{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.gridBox li {
+    border: 1px solid black;
+}
+.grid-content1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+.grid-content2 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+.grid-content3 {
+    grid-column: 4 / 5;
+    grid-row: 1 / -1;
+}
+.grid-content4 {
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+}
+.grid-content4 {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}
+.areaBox{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "B1 B1 B1 B2 B2"
+    "B1 B1 B1 B2 B2"
+    "B1 B1 B1 B3 B3"
+    "B4 B4 B4 B4 B4"
+    "B5 B5 B5 B5 B5";
+    /* 반드시 직사각형 형태로 배치해야 한다 
+    생성된 모든 칸에 들어가야 한다*/
+}
+.areaBox li {
+    border: 1px solid black;
+}
+.grid-area1 {
+    grid-area: B1;
+    /* grid-area 이름 지정 */
+}
+.grid-area2 {
+    grid-area: B2;
+}
+.grid-area3 {
+    grid-area: B3;
+}
+.grid-area4 {
+    grid-area: B4;
+}
+.grid-area5 {
+    grid-area: B5;
+}
+/* transform */
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border: 3px solid pink;
+}
+.translate {
+    transform: translate(20px, 20px);
+    /* tx, ty 쉼표로 구분한다 
+    픽셀과 퍼센트를 사용할 수 있다*/
+}
+.scale {
+    transform: scale(2, 2);
+    /* sx, sy 쉼표로 구분한다
+    정수만 사용할 수 있다 */
+}
+.rotate {
+    transform: rotate(60deg);
+    /* 하나의 각도만 사용한다 */
+}
+.rotateX {
+    transform: rotateX(60deg);
+}
+.rotateY {
+    transform: rotateY(60deg);
+}
+.rotateZ {
+    transform: rotateZ(60deg);
+}
+.skew {
+    transform: skew(-25deg, -15deg);
+    /* sx, sy 쉼표로 구분한다
+    각도를 사용한다 */
+}
+/* transition */
+.transition:hover {
+    transform: rotate(360deg);
+    transition: all 1s linear 1s;
+    /* transition: transition-property, transition-duration, transition-timing-function, transition-delay; 
+    transform 속성과 같이 적용한다.*/
+}
+/* animation */
+.animation:hover {
+    animation: amt 1s linear 1s infinite normal forwards;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation-delay 속성은 애니메이션 지연 시간을 설정합니다.
+    animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.
+    animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.
+    animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.
+    animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다.
+    animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.
+    animation-play-state 속성은 애니메이션 진행상태를 설정합니다.
+    animation-timing-function 속성은 애니메이션 움직임의 속도를 설정합니다.
+    */
+}
+@keyframes amt {
+    0%/* or from */{}
+    100%/*  or to */{transform: rotate(360deg)}
+}

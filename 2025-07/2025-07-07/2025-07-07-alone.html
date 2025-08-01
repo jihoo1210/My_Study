@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /**1-problem*/
+        .caption{
+            text-align: center;
+            font-weight: bold;
+        }
+        table td{
+            border: 1px black solid;
+        }
+        table tr:nth-child(odd){
+            background-color: lightgrey;
+        }
+        article h2 + p {
+            background-color: #fe0;
+        }
+        /**2-problem*/
+        #container{
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+        .prod-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+}
+        .prod-list li{
+            margin: auto;
+            flex-basis: calc(33.333% - 20px);
+            overflow: hidden;
+        }
+        .prod-list img{
+            width: 100%;
+            height: 300px;
+            z-index: 5;
+            object-fit:cover;
+        }
+        .prod-list .caption{
+            position: absolute;
+            top: 200px;
+            width: 100%;
+            height: 280px;
+            padding-top: 20px;
+            background-color: rgba(0, 0, 0, 6);
+            opacity: 0;
+            transition: all 0.6s ease-in-out;
+            z-index: 10;
+        }
+        .prod-list li{
+            position: relative;
+        }
+        .prod-list li:hover .caption{
+            opacity: 0.6;
+            transform: translate(0, -200px);
+        }
+        .prod-list .caption h2, .prod-list .caption p{
+            color: #fff;
+            text-align: center;
+        }
+        /**3-problem*/
+        .spinner {
+        width: 200px;
+        height: 200px;
+        background: url('/img/ball.png') no-repeat;
+        background-size: 100%;
+        }
+        .spinner:hover{
+        animation: rotate infinite linear 2s;
+        }
+        @keyframes rotate {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
+        /**4-problem*/
+        @keyframes changeColor{
+            0%{background-color: #ffe867;}
+            50%{background-color: #ff5e62;}
+            100%{background-color: #17bdff;}
+        }
+        @keyframes translate{
+            from{}
+            to{transform: translateX(400px);}
+        }
+        .container {
+          width: 450px;
+          padding: 10px;
+          border: 1px solid #222;
+        }
+        .box{
+          width: 50px;
+          height: 50px;
+          background-color: #d7f4ff;
+        }
+        .container:hover .box{
+          animation: alternate infinite 3s ease-in-out;
+          animation-name: translate, changeColor;
+        }
+        .startButton{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        }
+        /*1-study*/
+        td {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--1-problem-->
+    <table style="border: 1px solid black; border-collapse: collapse; width: 20%; margin: auto;">
+        <caption class="caption">웹 개발</caption>
+        <tr>
+            <td>HTML</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+        </tr>
+        <tr>
+            <td>Javascript</td>
+        </tr>
+        <tr>
+            <td>Node.js</td>
+        </tr>
+        <tr>
+            <td>Typescript</td>
+        </tr>
+    </table>
+<article>
+    <h2>가상 클래스</h2>
+    <p>요소의 특정 상태에 따라 스타일을 지정하기 위해 사용한다.</p>
+    <p>예: hover, active, nth-child</p>
+    
+    <h2>가상 요소</h2>
+    <p>문서에는 없지만 스타일을 지정하기 위해서 만든 가상의 요소.</p>
+    <p>예: first-letter, before, after</p>
+</article>
+    <!--2-problem-->
+    <div id="container">
+        <h1 style="text-align: center;">목록</h1>
+    <ul class="prod-list">
+        <li>
+            <img src="/a/001.jpg" alt="001" class="img">
+            <div class="caption">
+                <h2>사람1</h2>
+                <p>사람 1 이름</p>
+                <p>사람 1 이름</p>
+            </div>
+        </li>
+        <li>
+            <img src="/a/a-1/002.jpg" alt="002" class="img">
+            <div class="caption">
+                <h2>사람2</h2>
+                <p>사람 2 이름</p>
+                <p>사람 2 이름</p>
+            </div>
+        </li>
+        <li>
+            <img src="/a/a-1/a-1-1/003.jpg" alt="003" class="img">
+            <div class="caption">
+                <h2>사람3</h2>
+                <p>사람 3 이름</p>
+                <p>사람 3 이름</p>
+            </div>
+        </li>
+    </ul>
+    </div>
+    <!--3-problem-->
+    <div class="spinner"></div>
+    <!--4-problem-->
+    <div class="container">
+		<div class="box" style="background-color: #ffe867;">   
+        </div>
+	</div>
+    <!--1-study-->
+    <!--
+        <script src="2025-07-07-alone.js">
+        </script>
+    -->
+    <!--5-problem-->
+    <!--
+    <script>
+        let num5 = parseInt(prompt("숫자를 입력하세요."));
+        let divide = parseInt(prompt("숫자를 나눌 숫자를 입력하세요."));
+        if(num5 > divide){
+        document.write(`<h1>${divide}의 배수인지 확인하기.</h1>`)
+        if(num5 % divide === 0){
+        document.write(`<h4>${num5}은(는) ${divide}의 배수입니다.</h4>`)
+        } else {
+        document.write(`<h4>${num5}은(는) ${divide}의 배수가 아닙니다.</h4>`)
+        }
+        } else {
+        document.write(`<h1>${num5}을(를) ${divide}보다 크게 입력해주세요.</h1>`)
+        }
+    </script>
+    -->
+    <script>
+        let Nnum = parseInt(prompt("숫자를 입력하세요."));
+        let multiple = parseInt(prompt(`몇까지 ${Nnum}의 배수를 찾을까요?`));
+        let count = 1;
+        const num = Nnum;
+        document.write(`<h1>${Nnum}의 배수 찾기</h1>`)
+        for(Nnum; Nnum <= multiple; Nnum*=count){
+            document.write(`${Nnum},`);
+            count++;
+            Nnum = num;
+        }
+        document.write(`<br>${multiple}까지 ${num}의 배수의 개수: ${count-1}`);
+    </script>
+</body>
+</html>

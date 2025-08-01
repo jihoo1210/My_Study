@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*header*/
+header{
+    width: 90%;
+    height: auto;
+    max-width: 1240px;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+.logo{
+    font-family: 'Limelight';
+    font-weight: bolder;
+    padding-left: 30px;
+    margin-top: 10px;
+    float: left;
+}
+.icon{
+    margin: 100px 50px 50px;
+    float: right;
+}
+.icon a{
+    text-decoration: none;
+    margin-left: 20px;
+    color: black;
+}
+.icon a:hover, .logo:hover{
+    text-shadow: 1px 1px 0.1px grey;
+    cursor: pointer;
+}
+ul{
+    list-style: none;
+}
+/*main*/
+#main-content{
+    width: 90%;
+    height: 600px;
+    margin: 40px auto;
+    background-image: url(../images/landscape-landscape-7209222_1280.jpg);
+    background-position-y: -100px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border: 1px solid white;
+}
+#main-content:hover {
+    border: #FF00AF 10px solid;
+}
+.product{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+.product1 ul{
+    font-family: 'Tinos';
+    line-height: 2em;
+}
+.product1 ul li{
+    display: inline;
+}
+.line{
+    border-right: 1px solid black;
+}
+.inlineB{
+    display: inline-block;
+    width: 30%;
+    margin-left: 0.5em;
+}
+.product ul a{
+    text-decoration: none;
+    color: black;
+}
+.product ul li:nth-child(even):hover a{
+    background-color: green;
+    color: white;
+}
+.product ul li:hover a{
+    color: green;
+}
+/*selling*/
+/*
+#selling{
+    width: 90%;
+    margin: 0 auto;
+}
+.selling-content{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+}
+.card{
+    width: 20%;
+
+}
+.img img{
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+.card-text{
+    width: 100%;
+    height: 70px;
+}
+.card-text p{
+    font-family: 'Tinos';
+    font-size: 0.5em;
+    float: right;
+}
+.card-text h3{
+    font-family: 'Tions';
+    font-size: 0.5em;
+    float: left;
+    font-weight: 300;
+}
+*/
+/*footer*/
+footer{
+    background: url(../images/landscape-landscape-7209222_1280.jpg) fixed;
+    background-position-y: -1600px;
+    color: white;
+    width: 90%;
+    height: 80px ;
+    margin: 40px auto 0 auto;
+    position: relative;
+}
+footer .info{
+    font-family: 'Tions';
+    font-size: 0.5em;
+    height: 1em;
+
+}
+.info p{
+    position: absolute;
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
+    line-height: 3em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

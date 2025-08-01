@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../../bootstrap/js/popper.min.js"></script>
+    <script src="../../../bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        div[class*="btn"] {
+            margin: 10px;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        .hide-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container text-center my-5">
+    <button class="btn btn-dark">버튼 1</button>
+    <button class="btn btn-dark">버튼 2</button>
+    <button class="btn btn-dark">버튼 3</button>
+</div>
+<div class="container">
+
+</div>
+<div class="container text-center mt-5">
+    <button class="btn btn-primary">test 1</button>
+    <button class="btn btn-primary">test 2</button>
+</div>
+    <script>
+        $(function(){
+            $(".btn1").click(function(){
+                $(".con1").show(1000);
+            });
+            $(".btn2").click(function(){
+                $(".con2").fadeIn(1000);
+            });
+            $(".btn3").click(function(){
+                $(".con3").slideDown(1000);
+            });
+            $(".con1").click(function(){
+                $(".con1").hide(1000);
+            });
+            $(".con2").click(function(){
+                $(".con2").fadeOut(1000);
+            });
+            $(".con3").click(function(){
+                $(".con3").slideUp(1000);
+            });
+        });
+        $("button").click(function(event) { // event 객체만 매개변수로 받음
+            const clickedIndex = $(this).index(); // .index() - 형재 요소들 중에 몇번인지 반환
+            console.log("클릭된 버튼의 인덱스:", clickedIndex);
+        });
+    </script>
+</body>
+</html>

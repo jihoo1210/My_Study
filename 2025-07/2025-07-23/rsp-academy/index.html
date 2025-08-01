@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="head-container">
+        <div class="select-box left">
+            <div class="user"></div>
+        </div>
+        <div class="center result">결과</div>
+        <div class="center score">스코어</div>
+        <div class="select-box right">
+            <div class="com"></div>
+        </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>! 가위 바위 보 !</h1>
+        <button type="button" class="btn show" onclick="enter()">도전하기</button>
+        <button type="button" class="btn back left" onclick="close1()">돌아가기</button>
+    <div class="flex">
+        <div class="rsp scissors" onclick="rspS()"></div>
+        <div class="rsp rock " onclick="rspR()"></div>
+        <div class="rsp paper" onclick="rspP()"></div>
+    </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

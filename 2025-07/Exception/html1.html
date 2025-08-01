@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--아이콘 가져오기-->
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+        /** 폰트 가져오기 
+        @import문은 다른 Css코드보다 무조건 우선하여 작성해야 한다.*/
+        .fontStyle1{
+            font-family: "Shadows Into Light", cursive;
+        }
+        .book1 {
+            list-style-type: lower-roman;
+        }
+        .book2 {
+            list-style-type: none;
+        }
+        .book3{
+            list-style-image: none;
+        }
+        .inside{
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family: Shadows Into Light, cursive;">hello world</h1>
+    <p class="fontStyle1">first font style</p>
+    <li>
+        <i class="fa-solid fa-house"></i>
+        <a href="#section1">menu1</a>
+        <li>
+        <i class="fa-solid fa-circle-user"></i>
+        <a href="#section2">menu2</a>
+        </li>
+    </li>
+    <ul class="book1 inside">
+        <li>first list</li>
+        <li>secounds list</li>
+    </ul>
+    <ul class="book2 inside">
+        <li>first list</li>
+        <li>secounds list</li>
+    </ul>
+    <table>
+        <caption style="text-align: right;">출처: 통계청 100대 지표</caption>
+        <tr>
+            <th>지수</th>
+            <th>2019년</th>
+            <th>2020년</th>
+            <th>2021년</th>
+            <th>2022년</th>
+        </tr>
+        <tr>
+            <th>가구 수1</th>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <th>가구 수2</th>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+        </tr>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col style="background-color: #e5f6f6;">
+        </colgroup>
+    </table>
+
+    <h1 id="section1">라면 레시피</h1>
+    <h2><a name="section2">준비물</h2>
+    <ol style="list-style-type:none;">
+        <li>* 물 550cc</li>
+        <li>* 라면 한 봉지</li>
+    </ol>
+    <h2>조리법</h2>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <div style="position: relative; width: 400px;">
+    <img src="다운로드.jpg" alt="다운로드 이미지" style="width: 100%;">
+    <!--absolute는 가장 큰 영역을 차지하는 요소의 크기에 다른 모든 요소의 크기를 맞춘다.-->
+    <p style="background-color: black; color: orange; margin: 0;">확인하세요</p>
+    <div style="border: 1px solid black;">
+        <h2 class="title1">주문 및 배송</h2>
+        <p class="paragraph1"><span class="accent">오후 2시 이전</span> 주문건은...</p>
+    </div>
+    <div style="border: 1px solid black;">
+        <h2 class="title1">교환 및 환불</h2>
+        <p class="paragraph1">불만족시 <span class="accent">100%</span> 환불해 드립니다...</p>
+    </div>
+    <div style="border: 1px solid black;">
+        <h2 class="title1">고객센터</h2>
+        <p class="paragraph1">0000-0000</p>
+        <P class="smalltext">상담시간: 00~00</P>
+    </div>
+    </div>
+    <hr>
+    <p style="float: right; background-color: black; color:white;">right float</p>
+    <p style="float: left;" class="bgblack">left float</p>
+    <p> 옛날로 돌아가보면 사실 74 월드컵 네덜란드는 지금의 시선으로 보면 되게 형편없습니다. 보다가 계속 꺼버리고 결국엔 대부분의 경기들을 풀 타임 시청을 못하긴 했는데 (아리고 사키의 밀란까진 어떻게 됐는데 그 이전은 풀 타임 시청이 안 되더라구요. 원래 다시 보기라는 거 자체를 안 좋아하긴 하는데 옛날 경기 다 보고나서 다시 보기는 정말 할 게 못 된다는 걸 느끼고 그 후로 지나간 경기들이나 옛날 경기들은 안 찾아봅니다.) 모두가 미친듯이 뛰어다니긴 하는데 되게 무질서하고 중구난방이었습니다. 근데 당시에 충격적이었던 건 그거죠. 축구란 스포츠는 긴 거리를 돌파하고 상대 수비수들을 박스 근처에서 현란하게 제끼면서 골키퍼를 넘어서는 그런 스포츠였는데 다른 의미로 접근한 거였으니까요.
+출처: https://ainiesta8.tistory.com/2416 [Miscellaneous Blog:티스토리]</p>
+<img src="사진2.jpg" alt="다운로드 사진" style="border: 1px solid #ccc; box-shadow: 5px 5px 30px 2px #000;" class="cardImg">
+<div style="border: 1px solid #ccc; padding: 20px; text-align: center;">
+    <div class="travelCard left">
+        <img src="사진2.jpg" alt="사진2" class="cardImg">
+        <div class="cardText">
+            <h4>도심 투어</h4>
+            <p>도심 투어 입니다.</p>
+        </div>
+    </div>
+        <div class="travelCard left">
+        <img src="사진2.jpg" alt="사진2" class="cardImg">
+        <div class="cardText">
+            <h4>도심 투어</h4>
+            <p>도심 투어 입니다.</p>
+        </div>
+    </div>
+    <div class="travelCard left">
+        <img src="사진2.jpg" alt="사진2" class="cardImg">
+        <div class="cardText">
+            <h4>도심 투어</h4>
+            <p>도심 투어 입니다.</p>
+        </div>
+    </div>
+    <div class="travelCard left">
+        <img src="사진2.jpg" alt="사진2" class="cardImg">
+        <div class="cardText">
+            <h4>도심 투어</h4>
+            <p>도심 투어 입니다.</p>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</div>
+</body>
+</html>
+<!--
+ol: orderd list
+ul: unorderd list
+----
+dl: Description List
+dt: description list term
+dd: data description
+----
+a: anchor
+target="_black": 새 창에서 열기
+----
+기본 글자 사이즈: 16px.
+1em > 16px.
+----
+col: column
+----
+block level: 한 줄의 영역 전체를 차지하는 요소
+> h1, div, p 등이 있다.
+inline level: 콘텐츠만큼의 영역만을 차지하는 요소
+> span, img, strong 등이 있다.
+----
+justify-content: 주축 정렬 방법(양옆,위 아래)
+align-item: 교차축 정렬 방법(양옆,위 아래)
+align-content: 교차축 줄바꿈 방법
+flex-direction: 플랙스 블록 방향 설정
+flex-wrap: 줄 갯수와 방향 설정
+flex-flow: flex-direction + flex-wrap
+----
+flex-basis: 플랙스 항목 기본 크기 설정
+-->

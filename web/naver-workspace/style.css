@@ -1,0 +1,22 @@
+#wrap{
+    overflow-x: hidden;
+    min-width: 1340px;
+}
+div{
+    display: block;
+}
+body {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+}
+/*header*/
+#header{
+    width: 1280px;
+    margin: 0 auto;
+}
+#header .header_inner{
+    z-index: 120px;
+    position: relative;
+    height: 156px;
+    padding-left: 52px 0 8px;
+}

@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box; /* 보더를 넓이 요소에 포함해 계산한다 */
+    margin: 0;
+    padding: 0;
+    /* 기본 마진값과 패딩값 없애기 */
+}
+.relative {
+    position: relative;
+}
+head, body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #373778;
+}
+a {
+    text-decoration: none;
+    /* 링크의 밑줄 없애기 */
+}
+ul {
+    list-style: none;
+    /* 리스트 스타일 없애기 */
+}
+/* head */
+.container {
+    width: 1300px;
+    margin: 0 auto;
+}
+.hero {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    /* absolute의 부모 요소로 지정 */
+}
+.hamb {
+    background: url(../Hansot/images/002.jpg);
+    background-size: cover;
+    /* 요소를 범위에 가득 채우기 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 요소의 크기를 부모에 맞추기 */
+    z-index: 0;
+}
+/* top navigation */
+nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+nav a {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
+.clearfix::after {
+    content: '';
+    display: table;
+    /* 가상 요소를 사용할 때는 콘텐츠와 디스플레이를 무조건 지정해야 한다 */
+    clear: both;
+}
+.topnav li {
+    float: right;
+    /* float은 완전한 inline 요소가 아니기 때문에 모든 방향의 margin을 적용할 수 있다 */
+    position: relative;
+}
+.topnav li:not(:first-child)::after {
+    content: '';
+    display: table;
+    width: 1px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    /* 부모 요소(topnav li)에 맞춤 */
+    right: 0;
+    /* 오른쪽 끝 */
+    top: 10px;
+    /* 흰색 선이 부모 밑에 생성되는 이유?? */
+}
+.topnav li>a {
+    display: block;
+    /* float이 적용되었기 때문에 display가 block이어도 줄바꿈이 되지 않는다. */
+    margin: 5px 0;
+    padding: 0 15px;
+}
+.topnav li>a.sns {
+    display: inline-block;
+    /* 크기를 조절할 수 있게 함과 동시에 아이콘들을 한 줄에 배치하기 위함 */
+    width: 15px;
+    height: 15px;
+    /* 마찬가지로, float이 적용된 inline 요소이기 때문에 넓이값과 높이값을 조절할 수 있다. 
+    화면 상에 보이는 넓이와 높이*/
+    margin: 7px 10px;
+    padding: 0;
+    /* 관계도가 더 명확하기 때문에 우선 적용됨 */
+}
+.insta {
+    background: url(../Hansot/images/icon_sns_01.png) -30px;
+    /* -30px은 사진을 왼쪽으로 이동시킨다. > 오른쪽으로 30px 이동한 모습이 보임 */
+    background-size: 60px 15px;
+    /*이미지의 총 넓이와 높이*/
+}
+.topnav li>a.sns.facebook {
+    background: url(../Hansot/images/icon_sns_01.png) -45px;
+    /* -30px은 사진을 왼쪽으로 이동시킨다. > 오른쪽으로 30px 이동한 모습이 보임 */
+    background-size: 60px 15px;
+    /*이미지의 총 넓이와 높이*/
+    margin: 7px 0;
+    /* margin 재적용 > 관계도의 명확도의 따라 우선순위가 정해진다 */
+}
+.topnav li>a.sns.youtube {
+    background: url(../Hansot/images/icon_sns_01-1.png);
+    background-size: 15px;
+    /*이미지의 총 넓이와 높이*/
+    margin: 7px 0 7px 10px;
+    /* margin 재적용 > 관계도의 명확도의 따라 우선순위가 정해진다 */
+}
+/* global navigation */
+.gnbBox {
+    background-color: #fff;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    /* top, left, right, bottom 중 하나 이상과 함께 사용해야 작동한다 */
+    height: 90px;
+    /* container에 width값이 지정되어 있기 때문에 따로 지정할 필요가 없다 */
+}
+.gnbInBox {
+    width: 100%;
+    position: relative;
+    width: 100%;
+    /* container의 넓이 값을 따름 */
+    height: 100%;
+    /* gnbBox의 넓이 값을 따름 */
+}
+a.brand {
+    float: left;
+    margin: 20px 0 0 30px;
+}
+nav .gnb>li>a {
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 90px;
+    /* 현재 display: inline;이기 때문에 높이값(height)를 조절할 수 없다 */
+}
+nav .lnb>li>a {
+    color: #666;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+nav .lnb>li:first-child {
+    margin-top: 40px;
+}
+nav .lnb>li {
+    margin-top: 20px;
+}
+nav.gnbBox .gnb>li:hover {
+    border-bottom: 8px solid #f6ca00;
+}
+nav.gnbBox .gnb>li:hover>a{
+    color: #f6ca00;
+}
+.lnb li:hover a {
+    /* 부모 li를 hover하면서 자식 li 또한 hover되는 상태가 되기 때문에 두 개의 li의 색상이 변할 수 있다 */
+    text-decoration: underline;
+    color: #000;
+    font-weight: 500;
+    /* 색상을 li에 준다면 현재 li에는 직접적으로 텍스트가 작성되어있지 않기 때문에 아무런 변화가 일어나지 않는다 */
+}
+ul.gnb{
+    margin-left: 240px;
+    /* 로고와 gnb사이 거리두기 */
+    height:90px;
+}
+ul.gnb>li {
+    float: left;
+    height: 100%;
+    /* gnb의 부모인 gnbInBox의 부모인 gnbBox의 높이인 90px 
+    참고: line-height는 높이값을 가지지 않는다. 즉, 자식요소에서 height: 100%;를 사용할 수 없다.*/
+    padding: 0px 33px;
+    text-align: center;
+    /* 자식 요소도 적용됨 */
+    position: relative;
+}
+ul .lnb {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    width: 100%;
+    /* 부모 요소의 넓이에 맞춤 */
+    left: 0;
+}
+.lnbBox {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 90px;
+    /* 밑으로 내리기 */
+    left: 0px;
+    /* 왼쪽 끝 정렬 */
+    display: none;
+    z-index: 2;
+    /* popup 위에 위치하도록 */
+}
+.gnbInBox:hover .lnbBox, .gnbInBox:hover .lnb {
+    /* gnbBox:hover했을 때 하위요소 .lnbBox, gnbBox:hover했을 때 하위요소 .lnb */
+    display: block;
+}
+/* popup */
+.popup {
+    width: 290px;
+    height: 440px;
+    position: absolute;
+    /* relative를 가진 부모 요소 누구? */
+    right: 0;
+    top: 20px;
+    z-index: 1;
+    /* lnbBox 밑에 위치하도록 */
+}
+.popup img {
+    width: 100%;
+}
+.bottom {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    /* relative를 가진 부모 요소 누구? */
+    bottom: 0;
+    left: 0;
+}
+.bottom a {
+    display: block;
+    /* float를 하려면 block이어야 한다 */
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    text-decoration: none;
+    color: #fff;
+}
+a.oneday {
+    width: 70%;
+    background: #666;
+}
+a.close {
+    width: 30%;
+    background: #333;
+}
+/* section - 1 - iframe*/
+
+.container iframe {
+    margin-top: 50px;
+}
+/*
+.section-img {
+    width: 100%;
+    height: 565px;
+    position: relative;
+}
+.section-img{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    margin-top: 40px;
+}
+.section-img img{
+    width: 49%;
+    height: 395px;
+}
+.section-img-content {
+    position: absolute;
+    width: 49%;
+    height: 170px;
+    bottom: 0;
+    background-color: #EEECEC;
+    color: black;
+}
+.right {
+    right: 0;
+}
+.section-img-content h2 {
+    padding: 20px;
+    font-weight: 400;
+}
+    */
+/* section - 1*/
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    /* 3등분 동일하게 정렬하기 위해서 범위를 초과시킨다*/
+}
+.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.col-2 {
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* 마진이 -15px씩 있기 때문에 부모 요소 안에 들어오고, 서로 겹치는 부분에 동일한 크기의 padding이 생긴다 */
+    float: left;
+}
+.col-3 {
+    width: 33.334%;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+.mt50 {
+    margin-top: 50px;
+}
+a.block {
+    display: block;
+    /* 안에 img 태그를 넣기 위해 display를 block으로 만든다 */
+    background-color: #eee;
+    padding-bottom: 30px;
+    border-bottom: 8px solid #333;
+}
+a.block:hover {
+    border-bottom: 8px solid #f6ca00;
+}
+a.block img {
+    width: 100%;
+}
+a.block p {
+    color: #333;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 30px 0 10px 30px;
+}
+.support {
+    padding: 0 0 0 30px;
+    vertical-align: middle;
+    color: #333;
+}
+.support span.hanp {
+    display: inline-block;
+    /* 옆에 글자를 배치해야 되기 때문에 inline 속성을 줘야한다 
+    크기를 바꿔야 하기 때문에 block 속성을 줘야한다*/
+    width: 20px;
+    height: 20px;
+    background: url(./images/icon/btn_link.png) no-repeat left top;
+    /* left와 top은 위치값을 조절한다 */
+    background-size: auto 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+a.block:hover .hanp{
+    background: url(./images/icon/btn_link.png) no-repeat right top;
+    background-size: auto 20px;
+    vertical-align: middle;
+}
+.row div.col-3 a.block.yellowBox{
+    background-color: #f6ca00;
+    color: #000;
+    border: none;
+    font-size: 20px;
+    text-align: start;
+    padding: 30px;
+    height: 434.85px;
+}
+.row div.col-3 a.block.yellowBox h2::after{
+    content: '';
+    display: table;
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    margin-top: 30px;
+}
+.row div.col-3 a.block.yellowBox p{
+    font-size: 16px;
+    padding: 20px 0 0 0;
+}
