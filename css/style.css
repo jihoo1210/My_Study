@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.logo {
+    line-height: 56px;
+}
+.bg-lightgray {
+    background-color: rgb(224, 224, 224);
+}
+.line-350 {
+    line-height: 330px;
+    font-size: 100px;
+}
+.search-input {
+    outline: none;
+}
+.categories {
+    list-style: none;
+}
+.col-lg-8, .col-lg-6, .col-lg-4 {
+    padding: 0;
+}
+.row-gap {
+    gap: 30px;
+}
+.blue-line {
+    text-decoration: underline;
+}

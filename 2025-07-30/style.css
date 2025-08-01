@@ -1,0 +1,69 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: hidden;
+}
+main {
+    background-image: url(../../www/images/jAcQuW--ywpHN61XiD1QC-Wjx3e3aoVnD4qVRAAW-wM_6tgLGIjrqvXe17bqSWsTX9I-r2gMFO9lUZXxzQyIrt-sdJxTPTub9eKc0N2YGtCwKbrg2g-TOzyY0PBahINm7jJBbZ9tjyinnJ9GQOdOug.webp);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+main::before, .card>div::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+main .my-img {
+    background: url(../../www/images/zGTyYG0ddvErIpnN12qC4AYnAc3X0KSHgwWyae9TlSRaBow_nlCj4CVEwygkt7ew_KDgyoKKAt53xjOi9sMSa4nJ_l86z1J4I1Ij8CduD0xDpJnrblv4gxWSmBYYdIXuodRMMglYKQ6VBUbMdt6amw.webp)
+    -350px -100px no-repeat;
+    width: 300px;
+    height: 300px;
+}
+.navbar {
+    transition: background-color 0.8s ease-in-out;
+}
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+}
+.card {
+    border: none;
+}
+.card-img-overlay div {
+    position: relative;
+    z-index: 2;
+}
+.card-img-width{
+    position: relative;
+}
+.card>.card-img-width::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.card img {
+    height: 300px;
+}
+.badge-purple {
+    background-color: blueviolet;
+    color: white;
+}
+.badge-purple:hover {
+    background-color: rgb(118, 37, 194);
+    color: white !important;
+}

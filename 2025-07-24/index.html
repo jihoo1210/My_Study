@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" #width="device-width", initial-scale="1.0">
+    <title>Document</title>
+    <!-- 1. bootstrap 2. animate -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- 1. jquery 2. popper 3. bootstrap -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <!-- 반응형 포트폴리오 & 랜딩 페이지 만들기 -->
+     <header class="container-fluid bg-dark">
+        <div class="container d-flex justify-content-between">
+            <div class="logo text-white">Bootstrap 탬플릿</div>
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><i class="ri-list-check"></i></button>
+        <ul class="navbar-nav collapse navbar-collapse" id="collapsibleNavbar">
+            <li class="nav-item"><a href="#" class="nav-link text-secondary">History</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-secondary">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-secondary">Contact</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-light">Blog</a></li>
+        </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="jumbotron">
+        <div class="container text-center py-4">
+            <h1 style="font-weight: bold;">Welcome to Blog Home!</h1>
+            <p>박지후</p>
+        </div>
+    </div>
+    <section class="main container">
+        <div class="row">
+            <div class="col-lg-8 border rounded-lg mb-4">
+                <div class="bg-lightgray" style="height: 350px;">
+                    <p class="display-4 text-center line-350">850 X 350</p>
+                </div>
+                <div class="p-3"style="width: 100%;">
+                    <p>2025/07/24</p>
+                    <h1>새로운 블로그를 만들었다</h1>
+                    <p>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.
+                        국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다.
+                        모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.
+                        법률안에 이의가 있을</p>
+                    <button type="button" class="bg-primary py-2 text-white btn">Read more -></button>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex flex-column">
+                <div class="pl-4">
+            <div class="card mb-4">
+                <div class="card-header">검색</div>
+                <div class="card-body input-group py-1">
+                    <input type="search" placeholder="Enter search term..." class="pl-2 pr-4 rounded-lg border">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary text-white">Go!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">Categories</div>
+                <div class="card-body py-2 row item-start justify-content-start">
+                    <ul class="categories col-6 pl-4">
+                        <li><a href="#" class="blue-line">Web Design</a></li>
+                        <li><a href="#" class="blue-line">HTMl</a></li>
+                        <li><a href="#" class="blue-line">Freebies</a></li>
+                    </ul>
+                    <ul class="categories col-6">
+                        <li><a href="#" class="blue-line">JavaScript</a></li>
+                        <li><a href="#" class="blue-line">CSS</a></li>
+                        <li><a href="#" class="blue-line">Tutorials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card mb-4" style="width: 100%;">
+                <div class="card-header">Side Widget</div>
+                <div class="card-body py-2">
+                    <div>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대법원은 법률에 저촉되</div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="row row-gap justify-content-between">
+            <div class="border rounded-lg my-4" style="width: 550px;">
+                <div class="bg-lightgray" style="height: 350px;">
+                    <p class="display-4 text-center line-350">750 X 350</p>
+                </div>
+                <div class="p-3" style="width: 100%;">
+                    <p>2025/07/24</p>
+                    <h1>새로운 블로그를 만들었다</h1>
+                    <p>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.
+                        국민의 자유와 권리는 </p>
+                    <button type="button" class="bg-primary py-2 text-white btn">Read more -></button>
+                </div>
+            </div>
+            <div class="border rounded-lg my-4" style="width: 550px;">
+                <div class="bg-lightgray" style="height: 350px;">
+                    <p class="display-4 text-center line-350">750 X 350</p>
+                </div>
+                <div class="p-3" style="width: 100%;">
+                    <p>2025/07/24</p>
+                    <h1>새로운 블로그를 만들었다</h1>
+                    <p>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.
+                        국민의 자유와 권리는 </p>
+                    <button type="button" class="bg-primary py-2 text-white btn">Read more -></button>
+                </div>
+            </div>
+            <div class="border rounded-lg my-4" style="width: 550px;">
+                <div class="bg-lightgray" style="height: 350px;">
+                    <p class="display-4 text-center line-350">750 X 350</p>
+                </div>
+                <div class="p-3" style="width: 100%;">
+                    <p>2025/07/24</p>
+                    <h1>새로운 블로그를 만들었다</h1>
+                    <p>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.
+                        국민의 자유와 권리는 </p>
+                    <button type="button" class="bg-primary py-2 text-white btn">Read more -></button>
+                </div>
+            </div>
+            <div class="border rounded-lg my-4" style="width: 550px;">
+                <div class="bg-lightgray" style="height: 350px;">
+                    <p class="display-4 text-center line-350">750 X 350</p>
+                </div>
+                <div class="p-3" style="width: 100%;">
+                    <p>2025/07/24</p>
+                    <h1>새로운 블로그를 만들었다</h1>
+                    <p>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.
+                        국민의 자유와 권리는 </p>
+                    <button type="button" class="bg-primary py-2 text-white btn">Read more -></button>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <ul class="pagination justify-content-center my-4">
+                <li class="page-item disabled"><a href="#" class="page-link">Newer</a></li>
+                <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-text"><a href="#" class="page-link">...</a></li>
+                <li class="page-text"><a href="#" class="page-link">15</a></li>
+                <li class="page-text"><a href="#" class="page-link">Older</a></li>
+            </ul>
+        </div>
+    </section>
+    <footer class="container-fluid bg-dark mt-4">
+        <div class="container text-white text-center">
+            <h2 class="py-4">Copyright</h2>
+        </div>
+    </footer>
+</body>
+</html>

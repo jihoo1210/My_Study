@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+        integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body class="d-flex min-vh-100 flex-column" style="padding-top: 56px;">
+    <div class="container-fluid bg-dark fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-between">
+                <a href="#" class="navbar-brand">제품/서비스</a>
+                <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#nav"><i
+                        class="ri-skip-down-fill"></i></button>
+                <div class="collapse navbar-collapse justify-content-end" id="nav">
+                    <ul class="navbar-nav text-right">
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <main class="flex-grow-1">
+        <div class="container-fluid p-0">
+            <div class="carousel slide" data-ride="carousel" data-interval="3000" id="indicator">
+                <ul class="carousel-indicators">
+                    <li data-target="#indicator" data-slide-to="0" class="active"></li>
+                    <li data-target="#indicator" data-slide-to="1"></li>
+                    <li data-target="#indicator" data-slide-to="2"></li>
+                </ul>
+
+                <div class="carousel-inner text-center text-white">
+                    <div class="carousel-item active position-relative">
+                        <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <p class="display-4 bg-dark">첫 번째 사진</p>
+                            <p class="lead bg-dark">첫 번째 사진에 대한 설명</p>
+                        </div>
+                        <img src="../../www/images/Untitled-14.jpg" alt="1" class="w-100 h-100">
+                    </div>
+                    <div class="carousel-item position-relative">
+                        <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <p class="display-4 bg-dark">두 번째 사진</p>
+                            <p class="lead bg-dark">두 번째 사진에 대한 설명</p>
+                        </div>
+                        <img src="../../www/images/Untitled-15.jpg" alt="2" class="w-100 h-100">
+                    </div>
+                    <div class="carousel-item position-relative">
+                        <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <p class="display-4 bg-dark">두 번째 사진</p>
+                            <p class="lead bg-dark">두 번째 사진에 대한 설명</p>
+                        </div>
+                        <img src="../../www/images/Untitled-16.jpg" alt="3" class="w-100 h-100">
+                    </div>
+                </div>
+                <a href="#indicator" class="carousel-control-prev" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a href="#indicator" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="card-deck">
+                <div class="card">
+                    <img src="../../www/images/진격의거인_배경화면1.jpg" alt="1" class="card-img-top">
+                    <div class="card-body">
+                        <div class="card-title">card-title-1</div>
+                        <div class="card-text">card-text-1</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">card-title-1</div>
+                        <div class="card-text">card-text-1</div>
+                    </div>
+                    <img src="../../www/images/진격의거인_배경화면1.jpg" alt="1" class="card-img-bottom">
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">card-title-3</div>
+                    </div>
+                    <div class="card-body">
+                        <img src="../../www/images/진격의거인_배경화면1.jpg" alt="1" class="card-img-top">
+                        <div class="card-text">card-text-3</div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="text-center mt-5">문의하기</h2>
+            <form class="form-inlie my-5 text-center">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter name">
+                <label for="email" class="ml-3">Email</label>
+                <input type="email" id="email" placeholder="Enter email">
+                <label for="number" class="ml-3">content</label>
+                <textarea id="number" placeholder="Enter content"></textarea>
+                <button type="submit" class="btn btn-primary ml-3">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer class="container-fluid bg-dark">
+        <div class="container text-white text-center">
+            <p class="display-4">Footer</p>
+        </div>
+    </footer>
+</body>
+
+</html>

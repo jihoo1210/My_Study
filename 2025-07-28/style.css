@@ -1,0 +1,16 @@
+.shadow1:hover{
+    box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px;
+}
+.testimonials-section div[class *= test] {
+    width: 200px;
+    height: 200px;
+}
+.test-img-1 {
+    background: url(../../www/images/Untitled-1.jpg) no-repeat -150px -100px;
+}
+.test-img-2 {
+    background: url(../../www/images/Untitled-2.jpg) no-repeat -240px -100px;
+}
+.test-img-3 {
+    background: url(../../www/images/Untitled-3.jpg) no-repeat -200px -100px;
+}
