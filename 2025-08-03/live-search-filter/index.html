@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 검색 필터링 과제</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>제품 목록</h2>
+    <div class="search-box">
+      <input type="text" id="filter-input" placeholder="제품 이름을 검색하세요...">
+    </div>
+    <ul id="product-list">
+      <li class="product">키보드</li>
+      <li class="product">마우스</li>
+      <li class="product">모니터</li>
+      <li class="product">마우스패드</li>
+      <li class="product">웹캠</li>
+      <li class="product">스피커</li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- 
+display: list-item;
+1. display: block;과 유사하게 동작하여, 부모 요소의 전체 가로 너비를 차지하려는 경향이 있습니다.
+2. 부모 요소인 ul은 그 부모 요소인 container의 너비를 따르게 됩니다.
+3. padding은 list-item의 부모 요소의 너비를 따르려는 경향의 영향을 받아 "총 너비 = 해당 요소의 너비 - (padding-x)"로 계산됩니다.
+-->
