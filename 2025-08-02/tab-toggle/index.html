@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 탭 메뉴 과제</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="tab-container">
+    <ul class="tab-menu">
+      <li class="tab-item active" data-tab="tab1">탭 1</li>
+      <li class="tab-item" data-tab="tab2">탭 2</li>
+      <li class="tab-item" data-tab="tab3">탭 3</li>
+    </ul>
+
+    <div class="tab-content-container">
+      <div id="tab1" class="tab-content active">
+        <h3>탭 1 내용입니다.</h3>
+        <p>이것은 첫 번째 탭에 해당하는 내용입니다.</p>
+      </div>
+      <div id="tab2" class="tab-content">
+        <h3>탭 2 내용입니다.</h3>
+        <p>이것은 두 번째 탭에 해당하는 내용입니다.</p>
+      </div>
+      <div id="tab3" class="tab-content">
+        <h3>탭 3 내용입니다.</h3>
+        <p>이것은 세 번째 탭에 해당하는 내용입니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
