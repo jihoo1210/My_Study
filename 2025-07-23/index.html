@@ -15,6 +15,7 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
+    <!-- **********************NAVIGATION********************** -->
     <header>
         <nav class="topnav bg-white animate__animated animate__slideInDown fixed-top">
             <div class="container">
@@ -54,6 +55,7 @@
                 </div>
             </div>
         </div>
+        <!-- **********************SUB NAVIGATION********************** -->
         <nav class="navigation navbar-expand-lg animate__animated animate__fadeInDown animate__delay-2s bg-white">
             <div class="container position-relative">
                     <div class="category position-absolute">
@@ -62,7 +64,7 @@
                         <span class="line line-2"></span>
                         <span class="line line-3"></span>
                     </div>
-                    <ul class="navbar-nav main-nav justify-content-between text-center">
+                    <ul class="navbar-nav main-nav justify-content-between text-center navbar-expand-sm">
                     <li class="nav-item">
                         <a href="javascript: void(0)" class="nav-link py-3 rounded-0">BEST 10%</a>
                         <ul class="lnb">
@@ -144,7 +146,7 @@
             </div>
         </nav>
     </header>
-    <!-- HERO PAGE -->
+    <!-- **********************HERO PAGE********************** -->
     <section id="hero">
         <div class="slide-container">
             <div class="mySlide fd first-slide">
@@ -158,6 +160,7 @@
             </div>
         </div>
     </section>
+    <!-- **********************BEST ITEM LIST********************** -->
     <section class="container">
         <h2 class="text-center mt-5 text-uppercase">best items</h2>
         <div class="row">
@@ -207,7 +210,7 @@
                     <p class="text-white">루픽 블라우스</p>
             </div>
             <div class="d-flex flex-row justify-content-center best-btn">
-            <button class="btn btn-light shoping-icon"><i class="ri-shopping-bag-line"></i></button>
+            <button class="btn btn-light shoping-icon"><i class="ri-shopping-bag-4-line"></i></button>
             <button class="btn btn-light heart-icon"><i class="ri-heart-2-line"></i></button>
             </div>
             </a>
@@ -299,6 +302,16 @@
         </div>
         </div>
     </section>
-    <script src="script.js"></script>
+    <!-- **********************ITEM LIST********************** -->
+      <section id="best" class="container position-relative">
+        <h2 class="text-center mt-5 pt-5 pb-5">BEST ITEMS</h2>
+
+        <div id="prev" class="npbtn"><i class="ri-arrow-left-s-line"></i></div>
+        <div id="next" class="npbtn"><i class="ri-arrow-right-s-line"></i></div>
+        <ul id="page"></ul>
+        <div class="slide-wrapper">
+            <div class="slide-wrapper-in"></div>
+        </div> 
+    <script src="./script.js"></script>
 </body>
 </html>

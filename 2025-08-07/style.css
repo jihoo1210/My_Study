@@ -1,0 +1,22 @@
+.active.nav-link {
+    color: #fff;
+    background: lightgreen;
+}
+
+.nav-link i, button i{
+    font-size: 50px;
+
+}
+.nav-link, span i {
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background: #a7a7a7;
+    color: white;
+    transition: background-color 0.3s ease-in-out ;
+}
+.nav-link:hover {
+    background: #000;
+    color: aquamarine;
+}
