@@ -1,0 +1,333 @@
+@import url(../css/font.css);
+* {
+    font-family: "Pretendard Variable" !important;
+    padding: 0;
+    border: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+.none {
+    display: none;
+}
+ /* **********************HEADER-BANNER********************** */
+.header-banner a{
+    display: block;
+    background: #EADADB;
+    color: #cc2424;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 15px 0;
+}
+/* **********************MAIN-NAVIGATION********************** */
+#main-nav a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 0.8em;
+}
+
+#main-nav a:not([class *= "not-link"]):hover, .gnb a:hover {
+    opacity: 0.5;
+    color: black;
+}
+#main-nav a.active {
+    font-weight: bold;
+}
+/* **********************MAIN-NAVIGATION-SLIDE-RIGHT********************** */
+.slide-right-nav {
+    transition: margin-left .5s .5s ease-in-out;
+    margin-left: -53px;
+}
+.home-button{
+    position: relative;
+    width: 45px;
+    height: 40px;
+    margin-right: 8px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .5s ease-in-out;
+}
+.home-button i::before{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* **********************CART-BOX********************** */
+.cart {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+}
+/* **********************JOIN-BANNER-BOX********************** */
+.banner-box::after {
+    position: absolute;
+    content: '';
+    border: 6px solid #303030;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-top: 6px solid transparent;
+    bottom: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.banner-box {
+    position: absolute;
+    background: #303030;
+    bottom: -10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    width: 60px;
+    animation: join-point-animation 1s linear infinite;
+}
+@keyframes join-point-animation {
+    from{transform: translateY(0);}
+    50%{transform: translateY(6px);}
+    to{transform: translateY(0);}
+}
+/* **********************LANGUAGE-BOX********************** */
+#main-nav .lang a {
+    display: inline-block;
+}
+.lang {
+    width: 80px;
+}
+.lang-flag {
+    width: 20px
+}
+/* **********************HERO********************** */
+/* **********************MAIN-LOGO********************** */
+h1.main-logo {
+    font-weight: 100;
+    letter-spacing: 8px;
+    font-size: 30px;
+    margin: 60px auto;
+}
+/* **********************SNS********************** */
+.sns i[class*="instagram"]::before {
+    background: #eee;
+    border-radius: 50%;
+    padding: 7px;
+}
+.sns a:hover i[class*="instagram"]::before {
+    background: linear-gradient(to right,#F0905C, #7D3EC0);
+}
+.sns a:hover i[class*="instagram"] {
+    color: white !important;
+}
+/* **********************SEARCH********************** */
+[type=search] {
+    outline-offset: 0;
+    -webkit-appearance: none;
+    transform: scaleX(.7);
+    transform-origin: right;
+    transition: transform 0.6s ease-in-out;
+}
+[type=search]:focus {
+    outline: 1px solid black;
+    transform: scaleX(1);
+}
+.search form button {
+    background-color: transparent;
+    right: 10px;
+    bottom: 5px;
+    cursor: pointer;
+}
+[type=search]:focus + span i::before {
+    color: black !important;
+}
+/* X 버튼과 검색 결과 버튼 숨기기 */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+/* **********************GLOBAL-NAVIGATION********************** */
+.gnb a {
+    color: #555;
+    font-size: 14px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+.gnb a.active {
+    color: #c09c39;
+}
+.gnb a.bold {
+    font-weight: bold;
+}
+[class*="line"] {
+    display: block;
+    width: 20px;
+    margin: 2px 0;
+    height: 2px;
+    background: black;
+}
+/* **********************MAIN-IMG********************** */
+.main-img img {
+    width: 100%;
+}
+/* **********************BEST-ITEMS********************** */
+.best-items {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 100px;
+    color: #555;
+    opacity: .9;
+}
+/* **********************BEST-ITEM-IMAGE********************** */
+.best-item-img-1 {
+    background-image: url(./img/Untitled-1.jpg);
+}
+[class*="best-item-img"] { /*screen width 고려해서 다시 만들기*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height:300px;
+    width: 100%;
+    transition: transform .3s ease-in-out, filter .3s ease-in-out;
+}
+[class*="best-item-card"]:hover [class*="best-item-img"]{
+    transform: scale(1.1);
+}
+[class*="best-item-card"]:hover [class*="best-item-img"]{
+    filter: brightness(.6);
+}
+/* **********************IMAGE-CONTENT-BOX********************* */
+[class*="best-item-card"] .img-content-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    z-index: 999;
+}
+[class*="best-item-card"]:hover .img-content-box{
+    display: block;
+}
+/* **********************BEST-ITEMS-COLOR-BOX********************** */
+.color-box span {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    margin: 0 5px;
+}
+/* **********************BEST-ITEMS-TEXT********************** */
+.img-text {
+    color: white;
+    font-size: 12px;
+}
+/* **********************BEST-ITEMS-PRICE********************** */
+.price [class*="price"] {
+    color: white;
+    font-size: 14px;
+}
+.price .old-price {
+    text-decoration: line-through;
+}
+.price .discount {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* **********************BEST-ITEMS-BUTTON********************** */
+.best-item-card .best-button-box{
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+.best-item-card .btn{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0;
+    margin: auto 3px;
+}
+.best-item-card .btn i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+[class*="best-item-card"]:hover .best-button-box{
+    bottom: 20px;
+}
+/* **********************BEST-ITEMS-SLIDE********************** */
+/* **********************BEST-ITEMS-SLIDE-BUTTON********************** */
+.slide-right, .slide-left {
+    position: absolute;
+    font-size: 30px;
+    z-index: 10;
+    cursor: pointer;
+    color: #555;
+}
+.slide-right i::before, .slide-left i::before {
+    border: 1px solid #555;
+    border-radius: 50%;
+    padding: 10px;
+    opacity: .6;
+}
+.slide-right {
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.slide-left {
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* **********************BEST-ITEMS-INNER-SLIDE********************** */
+.inner-slide {
+    width: calc(300% + 90px);
+    animation: slide 9s infinite;
+}
+/* **********************BEST-ITEMS-CAROUSEL-INDICATORS********************** */
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    left: 0;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    margin-left: 6px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-clip: padding-box;
+    border: none;
+    opacity: .5;
+    transition: opacity .6s ease;
+    background: #555;
+    border-radius: 50%;
+    padding: 0;
+}
