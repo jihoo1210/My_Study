@@ -1,0 +1,88 @@
+@import url(../css/font.css);
+* {
+    font-family: "Pretendard Variable" !important;
+    padding: 0;
+    border: 0;
+}
+ /* **********************HEADER-BANNER********************** */
+.header-banner {
+    background: #EADADB;
+    color: #cc2424;
+}
+.header-banner p {
+    font-weight: 500;
+    font-size: 15px;
+    padding: 15px 0;
+}
+/* **********************MAIN-NAVIGATION********************** */
+.border-bottom {
+    border-bottom: 1px solid #555555;
+}
+#main-nav a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 0.8em;
+}
+
+#main-nav a:not([class *= "not-link"]):hover {
+    opacity: 0.5;
+    color: black;
+}
+#main-nav a.active {
+    font-weight: bold;
+}
+/* **********************CART-BOX********************** */
+.cart {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+}
+/* **********************JOIN-BANNER-BOX********************** */
+.banner-box::after {
+    position: absolute;
+    content: '';
+    border: 6px solid #303030;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-top: 6px solid transparent;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.banner-box {
+    position: absolute;
+    background: #303030;
+    bottom: -10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 50px;
+    animation: join-point-animation 1s linear infinite;
+}
+@keyframes join-point-animation {
+    from{transform: translateY(0);}
+    50%{transform: translateY(6px);}
+    to{transform: translateY(0);}
+}
+/* **********************LANGUAGE-BOX********************** */
+#main-nav .lang a {
+    display: inline-block;
+}
+.lang {
+    width: 80px;
+}
+.lang-flag {
+    width: 20px
+}
+/* **********************HERO********************** */
+/* **********************MAIN-LOGO********************** */
+h1.main-logo {
+    font-weight: 100;
+    letter-spacing: 8px;
+    font-size: 30px;
+    margin-top: 60px;
+}
