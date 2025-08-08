@@ -1,0 +1,73 @@
+/* **********************JQUERY********************** */
+/* **********************INPUT BLUR 시 텍스트 지우기********************** */
+$(function() {
+    $(".search input").on("blur", function() {
+        $(this).val('');
+    });
+});
+/* **********************JAVASCRIPT********************** */
+$(document).ready(function() {
+    $('div').addClass("user-select-none");
+/* **********************JSON********************** */
+    fetch("./best.json")
+    .then(rs => rs.json())
+    .then(src => {
+        const bestCard = src.map(data => {
+            let color = data.color;
+            let title = data.title;
+            let oldPrice = data.cost;
+            let newPrice = data.price;
+            let discount = data.sale;
+            let styleString = '';
+            color.forEach(color => { //각 color에 적용
+                if(color == "wine"){ //style class 생성
+                styleString += `
+                    .color-box .${color} {
+                    background-color: purple;
+                }
+                `
+                } else if(color == "mint"){
+                styleString += `
+                    .color-box .${color} {
+                    background-color: lightgreen;
+                }
+                `
+                } else {
+                styleString += `
+                    .color-box .${color} {
+                    background-color: ${color};
+                }
+                `
+                }
+            });
+            const styleElement = document.createElement('style'); //style node 생성
+            styleElement.innerHTML = styleString; // style node에 styleString 추가
+            document.head.appendChild(styleElement); // head node에 style node 추가
+            let allColor = color.map(aColor => {
+                return `<span class="${aColor}"></span>`;
+            }).join('')
+            
+            return `
+                <div class="col-3 position-relative">
+                <div class="best-item-card best-item-card">
+                <div class="best-item-img-1"></div>
+                <div class="img-content-box">
+                    <div class="color-box">
+                        ${allColor}
+                    </div>
+                    <div class="img-text">${title}</div>
+                    <div class="price">
+                        <span class="old-price">${oldPrice}</span>
+                        <span class="discount">${discount}</span>
+                        <span class="new-price">${newPrice}</span>
+                    </div>
+                </div>
+                </div>
+                </div>
+            `
+        });
+    document.querySelectorAll('.slide-1').forEach(data => 
+        data.innerHTML += bestCard.join('')
+    );
+    });
+});
