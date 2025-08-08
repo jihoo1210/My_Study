@@ -18,7 +18,7 @@
 <body>
     <!-- **********************HEADER-BANNER********************** -->
     <div class="w-100 header-banner">
-        <p class="text-center m-0">앱으로 첫 구매시 5,000원 쿠폰 발급</p>
+        <a class="text-center m-0">앱으로 첫 구매시 5,000원 쿠폰 발급</a>
     </div>
     <!-- **********************MAIN-NAVIGATION********************** -->
     <div class="border-bottom">
@@ -112,18 +112,19 @@
     <div class="container d-flex flex-column text-center mx-auto">
         <h1 class="best-items text-uppercase">best items</h1>
         <!-- **********************BEST-ITEMS-IMAGE********************** -->
-        <div class="position-relative">
-            <div class="overflow-hidden">
-                <div class="inner-slide row justify-content-between mx-0">
-                    <div class="col-4 row slide-1 px-0"></div>
-                    <div class="col-4 row slide-1 px-0"></div>
-                    <div class="col-4 row slide-1 px-0"></div>
+        <div class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="slide-1 row"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide-1 row"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide-1 row"></div>
                 </div>
             </div>
-            <span class="slide-left"><i class="bi bi-chevron-right"></i></span>
-            <span class="slide-right"><i class="bi bi-chevron-left"></i></span>
         </div>
-    </div>
 </body>
 
 </html>

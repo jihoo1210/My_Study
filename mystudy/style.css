@@ -8,11 +8,12 @@ html {
     scroll-behavior: smooth;
 }
  /* **********************HEADER-BANNER********************** */
-.header-banner {
+.header-banner a{
+    display: block;
     background: #EADADB;
     color: #cc2424;
-}
-.header-banner p {
+    text-decoration: none;
+    cursor: pointer;
     font-weight: 500;
     font-size: 15px;
     padding: 15px 0;
@@ -157,27 +158,23 @@ input[type="search"]::-webkit-search-results-button {
     color: #555;
     opacity: .9;
 }
-/* **********************BEST-ITEMS********************** */
+/* **********************BEST-ITEM-IMAGE********************** */
 .best-item-img-1 {
     background-image: url(./img/Untitled-1.jpg);
 }
-[class*="best-item-img"] {
+[class*="best-item-img"] { /*screen width 고려해서 다시 만들기*/
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     height:300px;
     width: 100%;
-    transition: background-size .3s ease-in-out, filter .3s ease-in-out;
+    transition: transform .3s ease-in-out, filter .3s ease-in-out;
 }
 [class*="best-item-card"]:hover [class*="best-item-img"]{
-    background-size: 120%;
+    transform: scale(1.1);
 }
 [class*="best-item-card"]:hover [class*="best-item-img"]{
     filter: brightness(.6);
-}
-.col-3 {
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 /* **********************IMAGE-CONTENT-BOX********************* */
 [class*="best-item-card"] .img-content-box {
@@ -203,12 +200,6 @@ input[type="search"]::-webkit-search-results-button {
     border: 1px solid #555;
     margin: 0 5px;
 }
-.white {
-    background: white;
-}
-.black {
-    background: black;
-}
 /* **********************BEST-ITEMS-TEXT********************** */
 .img-text {
     color: white;
@@ -226,6 +217,31 @@ input[type="search"]::-webkit-search-results-button {
     color: white;
     font-size: 18px;
     font-weight: bold;
+}
+/* **********************BEST-ITEMS-BUTTON********************** */
+.best-item-card .best-button-box{
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+.best-item-card .btn{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0;
+    margin: auto 3px;
+}
+.best-item-card .btn i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+[class*="best-item-card"]:hover .best-button-box{
+    bottom: 20px;
 }
 /* **********************BEST-ITEMS-SLIDE********************** */
 /* **********************BEST-ITEMS-SLIDE-BUTTON********************** */
