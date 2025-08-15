@@ -7,6 +7,9 @@
 html {
     scroll-behavior: smooth;
 }
+.none {
+    display: none;
+}
  /* **********************HEADER-BANNER********************** */
 .header-banner a{
     display: block;
@@ -35,6 +38,27 @@ html {
 }
 #main-nav a.active {
     font-weight: bold;
+}
+/* **********************MAIN-NAVIGATION-SLIDE-RIGHT********************** */
+.slide-right-nav {
+    transition: margin-left .5s .5s ease-in-out;
+    margin-left: -53px;
+}
+.home-button{
+    position: relative;
+    width: 45px;
+    height: 40px;
+    margin-right: 8px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .5s ease-in-out;
+}
+.home-button i::before{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 /* **********************CART-BOX********************** */
 .cart {
@@ -272,4 +296,38 @@ input[type="search"]::-webkit-search-results-button {
 .inner-slide {
     width: calc(300% + 90px);
     animation: slide 9s infinite;
+}
+/* **********************BEST-ITEMS-CAROUSEL-INDICATORS********************** */
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    left: 0;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    margin-left: 6px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-clip: padding-box;
+    border: none;
+    opacity: .5;
+    transition: opacity .6s ease;
+    background: #555;
+    border-radius: 50%;
+    padding: 0;
 }

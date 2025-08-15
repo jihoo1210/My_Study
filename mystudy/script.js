@@ -1,10 +1,38 @@
 /* **********************JQUERY********************** */
 $(function () {
-/* **********************INPUT BLUR 시 텍스트 지우기*** */
+/* **********************INPUT BLUR 시 텍스트 지우기********************** */
     $(".search input").on("blur", function () {
         $(this).val('');
     });
-
+/* **********************STICKY 겹침 설정********************** */
+    $(window).scroll(function() {
+        const mainNavHeight = $("#main-nav").outerHeight();
+        $(".gnb").css("top", mainNavHeight);
+/* **********************HOME-BUTTON********************** */
+        const scrollTop = $(window).scrollTop();
+        if(scrollTop < mainNavHeight){
+            $(".banner-box").css("display", "block")
+            $(".home-button").css({
+                "transform": "scaleY(0)",
+                "transition": "transform .3s ease-in-out"
+            })
+            $(".slide-right-nav").css({
+                "margin-left": "-48px",
+                "transition": "margin-left .3s .3s ease-in-out"
+            })
+        } else {
+            $(".banner-box").css("display", "none")
+            $(".slide-right-nav").css({
+                "margin-left": "0",
+                "transition": "margin-left .3s ease-in-out"
+            })
+            $(".home-button").css({
+                "transform": "scaleY(1)",
+                "transition": "transform .3s .3s ease-in-out"
+            })
+        }
+    })
+/* **********************BEST-IMAGE-BOX-BUTTON-FILL*** */
     $(document).on("mouseover", ".bag", function() {
         $(this).find('i').removeClass("bi-bag").addClass("bi-bag-fill");
     });
