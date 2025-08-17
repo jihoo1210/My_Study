@@ -51,7 +51,7 @@ $(function() {
             }).join('');
             return `
             <li class="nav-item position-relative">
-                <a href="javascript: void(0)" class="nav-link text-uppercase font-weight-bold py-3">${data.title}</a>
+                <a href="${data.href}" class="nav-link text-uppercase font-weight-bold py-3">${data.title}</a>
                 <ul class="lnb navbar-nav position-absolute flex-column text-center font-weight-bold" style='background-color: rgba(0, 0, 0, .5)';>
                     ${contents}
                 </ul>
