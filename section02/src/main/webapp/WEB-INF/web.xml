@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+ 
+  <display-name>section02</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  <!-- 서블릿 설정 -->
+     <servlet-name>
+       ServletConfigInit <!-- 서블릿 이름 -->
+     </servlet-name>
+     <servlet-class>
+        chapter01.ServletCofigInit <!-- 서블릿 이름에 대응하는 클래스 주소 -->
+     </servlet-class>
+     
+     <init-param>
+       <param-name>username2</param-name> <!-- 초기화 매개 변수 이름 -->
+       <param-value>이순신</param-value> <!-- 초기화 매개 변수 값 -->
+     </init-param>
+     
+     <init-param>
+       <param-name>usercompany2</param-name>
+       <param-value>이순신주식회사</param-value>
+     </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ServletConfigInit</servlet-name> <!-- 서블릿 이름 설정 -->
+    <url-pattern>/sc</url-pattern> <!-- 서블릿 이름에 대응하는 주소창에 입력될 URL 설정 -->
+  </servlet-mapping>
+  
+  <context-param> <!-- 모든 서블릿에서 접근 가능한 초기화 매개변수 -->
+     <param-name>adminName</param-name>
+     <param-value>김 admin</param-value>
+  </context-param>
+  <context-param>
+     <param-name>adminId</param-name>
+     <param-value>admin123</param-value>
+  </context-param>
+  
+</web-app>
