@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.active {
+	color: #d63364 ;
+	font-weight: 800;
+}
+.size-contents label {
+	display: inline-block;
+	padding: 10px;
+	border: 2px solid #ddd;
+	border-radius: 15px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.size-contents input[type=radio]:checked + span,  .size-contents input[type=checkbox]:checked + span{
+	background: #ffebcc;
+	border: 2px solid #ff8800;
+	padding: 5px;
+}
+
+#order-sumary {
+	background-color: #f8f8f8;
+	border: 2px solid #e9ecef;
+	border-radius: 8px;
+}

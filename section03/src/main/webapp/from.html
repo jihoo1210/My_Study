@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼 전달 연습</title>
+<style>
+	* {box-sizing: border-box;}
+	ul {
+		width:	1000px;
+		margin: 0 auto;
+		padding: 0;
+		list-style-type: none;
+	}
+	li {
+		padding: 10px 30px;
+	}
+	li input {
+		padding: 8px;
+		border: 1px solid #ccc;
+		width: 100%;
+	}
+	label {
+		display: inlie-block;
+		width: 200pxl;
+		padding-right: 30px;
+		text-align: right;
+	}
+	.text-center {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<form action="formOk" name="myform" method="post">
+		<ul>
+			<li>
+				<label>번호</label>
+				<input type="tel" name="num">
+			</li>
+			<li>
+				<label>이름</label>
+				<input type="text" name="name">
+			</li>
+			<li>
+				<label>학점</label>
+				<input type="text" name="score">
+			</li>
+			<li class="text-center"><input type="submit" value="전송"></li>
+		</ul>
+	</form>
+</body>
+</html>
