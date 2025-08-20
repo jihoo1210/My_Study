@@ -1,0 +1,174 @@
+1. API 도큐먼트
+- 자바 표준 모듈에서 제공하는 라이브러리를 쉽게 찾아서 사용할 수 있도록 도와주는 문서.
+
+2. java.base 모듈
+- 모든 모듈이 의존하는(requires) 기본 모듈
+
+패키지     | 용도
+java.lang | 자바 언어의 기본 클래스
+java.util | 자료 구조와 관련된 컬렉션 클래스
+java.text | 날짜 및 숫자를 원하는 형태의 문자열로 만들어 주는 포맷 클래스
+java.time | 날짜 및 시간을 조작하거나 연산하는 클래스
+java.io   | 입출력 스트림 클래스
+java.net  | 네크워크 통신과 관련된 클래스
+java.nio  | 데이터 저장을 위한 Buffer 및 새로운 입출력 클래스
+
+3. Object 클래스
+- java.lang에 포함된 클래스
+- 자바의 모든 클래스는 Object의 자손 클래스이다.
+
+메소드                      | 용도
+boolean equals(Object obj) | 객체의 번지를 비교하고 결과를 리턴
+int hashCode()             | 객체의 해시코드를 리턴
+String toString()          | 객체 문자 정보를 리턴
+
+3-1. 객체 동등 비교
+- equals()는 비교 연산자 ==과 동일한 결과를 리턴한다.
+- String이 재정의한 equals()는 내부 문자열이 같은지 비교한다.
+
+3-2. 객체 해시코드
+- 객체를 식별하는 정수
+- 메모리 번지를 이용해서 해시코드를 생성한다.
+
+3-3 객체 문자 정보
+- 객체를 문자열로 리턴(클래스명@16진수해시코드)
+- Date가 재정의한 toString()은 현재 날짜와 시간을 리턴한다.
+- String이 재정의한 toString()은 저장된 문자열을 리턴한다.
+
+-System.out.println() 매개값이 객체일 경우 암묵적으로 toString()을 호출한다.
+
+3-4. 레코드 선언
+- 데이터 전달을 위한 DTO(Data Transfer Object)를 작성할 때 반복적으로 사용되는 코드를 줄이기 위해 도입되었다.
+- class 키위드 대신에 record로 대체하고 클래스 이름 뒤에 괄호를 작성해서 저장할 데이터의 종류를 변수로 선언한다.
+- record가 컴파일 될 때
+-- private final 필드 자동 생성
+-- 생성자 및 Getter 자동 생성
+-- hashCode(), equals(), toString() 재정의한 코드 추가
+
+3-5. 롬북 사용하기
+- lombok: 자동 코드 생성 라이브러리
+- 필드가 final이 아니고 Getter와 Setter을 getXxx, setXxx로 생성한다는 점을 제외하고 record와 일치한다.
+
+어노테이션                | 설명
+@NoArgsConstructor       | 기본 생성자 포함
+@AllArgsConstructor      | 모든 필드를 초기화하는 생성자 포함
+@RequiredArgsConstructor | 기본적으로 매개변수가 없는 생성자 포함. 만약 final 또는 @NonNull이 붙은 필드가 있다면 이 필드만 초기화시키는 생성자 포함
+@Getter                  | Getter 메소드 포함
+@Setter                  | Setter 메소드 포함
+@EqualsAndHashCode       | equals()와 hashCode() 메소드 포함
+@ToString                | toString() 메소드 포함
+@Data                    | @RequiredArgsConstructor + @Getter + @Setter + @EqualsAndHashCode + @ToString
+
+4. System 클래스
+- 운영체제의 일부 기능을 이용할 수 있다.
+
+정적 멤버            | 용도
+- 필드
+out                 | 콘솔에 문자 출력
+err                 | 콘솔에 에러 출력
+in                  | 키보드 입력
+- 메소드
+exit(int status)    | 프로세스 종료
+currentTimeMillis() | 현재 시간을 밀리초 단위의 long 타입값으로 리턴
+nanoTime()          | 현재 시간을 나노초 단위의 long 타입값으로 리턴
+getProperty()       | 운영체제와 사용자 정보 제공
+getenv()            | 운영체제의 화경 변수 정보 제공
+
+4.2 키보드 입력
+- in 필드를 이용해서 read() 메소드를 호출하면 입력된 키의 키코드를 얻을 수 있다.
+
+4.3 프로세스 종료
+- 운영체제는 실행 중인 프로그램을 프로세스로 관리한다.
+- System.exit() 메소드를 통해 프로세스를 강제로 종료할 수 있다.
+-- int 매개값은 0으로 하는 것이 관례이다.
+
+4.4 진행 시간 읽기
+- currentTimeMillis(), nanoTime()
+- 1970년 1월 1일 0시 0분 0초부터 현자까지 진행된 시간을 리턴한다.
+
+4.5 시스템 프로퍼티 읽기
+- getProperty()
+- 시스템 프로퍼티: 자바 프로그램이 시작될 때 자동 설정되는 시스템의 속성
+
+5. 문자열 클래스
+
+클래스           | 설명
+String          | 문자열을 저장하고 조작할 때 사용
+StringBuilder   | 효율적인 문자열 조작 기능이 필요할 때 사용
+StringTokenizer | 구분자로 연결된 문자열을 분리할 때 사용
+
+5-1. String 클래스
+-  문자열 리터럴은 자동으로 String 객체로 생성된다.
+
+5-2. StringBuilder 클래스
+- 내부 매모리에 문자열을 저장해두고 그 안에서 추가, 수정, 삭제 작업을 하도록 설계되어 있다.
+- 잦은 문자열 변경 작업에 효율적이다.
+
+리턴타입        | 메소드                        | 설명
+StringBuilder | append(기본값 | 문자열)         | 문자열을 끝에 추가
+StringBuilder | insert(위치, 기본값 | 문자열)    | 문자열을 지정 위치에 추가
+StringBuilder | delete(시작 위치, 끝 위치)       | 문자열 삭제 (시작 위치 <= 범위 < 끝 위치)
+StringBuilder | replace(위치, 기본값 | 문자열)   | 문자열을 지정 위치에 추가
+String        | toString()                    | 완성된 문자열을 리턴
+
+5-3. StringTokenizer 클래스
+- 구분자를 기준으로 문자열을 분리하려면 split() 메소드나 StringTokenizer을 이용해야 한다.
+- StringTokenizer(문자열, 구분자)
+
+리턴 타입 | 메소드(매개변수)   | 설명
+int     | countTokens()    | 분리할 수 있는 문자열의 총 수
+boolean | hashMoreTokens() | 남아 있는 문자열이 있는지 여부
+String  | nextToken()      | 문자열을 하나씩 가져옴
+
+6. 포장 클래스
+- 기본 타입의 값을 갖는 객체를 포장 객체라고 한다.
+
+6-1. 박싱과 언박싱
+- 박싱: 기본 타입의 값을 포장 객체로 만드는 과정
+- 언박싱: 포장 객체에서 기본 타입의 값을 얻어내는 과정
+
+6-2. 문자열을 기본 타입 값으로 변환
+- 대부분의 포장 클래스는 'pares+기본타입' 명으로 되어있는 정적 매소드를 지닌다.
+
+6-3. 포장 값 비교
+- 연산자 ==는 객체의 번지를 비교하기 때문에 정확한 결과를 얻을 수 없다.
+- 객체 내부의 값을 비교하도록 재정의 되어있는 포장객체의 equals() 메소드를 사용해야한다.
+
+7. 수학 클래스
+- 모두 정적 메서드이다.
+구분     | 코드           | 리턴값
+절대값   | abs(매개 값)   | 매개 값의 타입
+올림값   | ceil(매개 값)  | 매개 값의 타입
+버림값   | floor(매개 값) | 매개 값의 타입
+최대값   | max(매개 값)   | 매개 값의 타입
+최소값   | min(매개 값)   | 매개 값의 타입
+랜덤값   | random()      | 0.0 <= ? < 1.0
+반올림값 | round(매개 값) | 매개 값의 타입
+
+- java.util.Random, Random 객체
+객체 생성          | 설명
+Random()          | 현재 시간을 이용해서 종자값 자동 설정
+Random(long seed) | 주어진 종자값 사용
+
+- 종자값이 같다면 동일한 난수가 생성된다.
+
+- Random 메소드
+리턴값 | 메소드 | 설명
+boolean | nextBoolean() | boolean 타입의 난수 리턴
+double | nextDouble() | double 타입의 난수를 리턴
+int | nextInt() | int 타입의 난수를 리턴
+int | nextInt(int n) | int 타입의 난수를 리턴  0 <= ? < n 
+
+8. 날짜와 시간 클래스
+클래스         | 설명
+Date          | 날짜 정보를 전달하기 위해 사용
+Calendar      | 다양한 시간대별로 날짜와 시간을 얻을 때 사용
+LocalTimeDate | 날짜와 시간을 조절할 때 사용
+
+8-1. Date 클래스
+- Date 객체.toString()을 통해 현재 날짜를 문자열로 얻을 수 있다.
+
+8-2. Calendar 클래스
+- 정적 메서드 getInstance()를 활용해 현재 컴퓨터에 설정되어 있는 시간대를 얻을 수 있다.
+- TimeZone 객체를 Calendar.getInstance()의 매개값으로 활용하면 해당 도시의 시간을 알 수 있다.
+- get() 메소드의 매개값으로 Calendar에 정의된 상수를 주면 상수가 의미하는 값을 리턴한다.
