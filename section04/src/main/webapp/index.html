@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
+	<form action="OrderOk" method="post" name="order">
 	<div class="container">
 		<h1 class="text-center my-5 fw-bold"> 🍔주문하기🍔</h1>
 		<div class="size-title border-bottom border-dark">
@@ -14,7 +15,7 @@
 		</div>
 		<div class="size-contents py-3 border-bottom border-dark">
 			<label>
-				<input type="radio" name="size" value="S"/> 
+				<input type="radio" name="size" value="S" required/> 
 				<span>Small (4,500원)</span>
 			</label>
 			<label>
@@ -74,14 +75,16 @@
 			<h2 class="fw-bold py-3" id="complain">4. 요청사항</h2>
 		</div>
 		<div class="size-title border-bottom border-dark">
-			<textarea name="요청사항" class="form-control my-3" placeholder="요청사항을 입력해주세요"></textarea>
+			<textarea name="request" class="form-control my-3" placeholder="요청사항을 입력해주세요"></textarea>
 		</div>
 	</div>
 	
-	<div class="mt-5 text-end">
-		<div id="order-sumary" class="fw-bold p-3 my-3 text-center"></div>
-			<button type="submit" id="submit-btn" class="btn btn-primary btn-lg fw-bold">주문하기</button>
+	<div class="my-5 text-end" style="display: flex; flex-direction: column;">
+		<div id="order-sumary" class="fw-bold p-3 my-3 text-center">0원</div>
+		<input type="hidden" name="totalPrice" id="totalPrice"/>
+		<button type="submit" id="submit-btn" class="btn btn-primary btn-lg fw-bold">주문하기</button>
 	</div>
+	</form>
 	<script src="script.js"></script>
 </body>
 </html>

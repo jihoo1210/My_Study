@@ -76,8 +76,12 @@ function updateOrder() {
 	});
 
 	const selectDrink = document.querySelector("select[name='drink']").value;
-	console.log('selectDrink', selectDrink);
 	const drinkPrice = price.drink[selectDrink] || 0;
 
-	document.querySelector("#order-sumary").innerHTML = sizePrice + drinkPrice + ingredientPrice;
+    console.log('sizePrice :>> ', sizePrice);
+    console.log('drinkPrice :>> ', drinkPrice);
+    console.log('ingredientPrice :>> ', ingredientPrice);
+    const total = sizePrice + drinkPrice + ingredientPrice;
+	document.querySelector("#order-sumary").innerHTML = total.toLocaleString() + "원";
+	document.querySelector("#totalPrice").value = total;
 }
