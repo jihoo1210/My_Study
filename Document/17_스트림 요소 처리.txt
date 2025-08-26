@@ -49,3 +49,88 @@
 
 6-2. 요소를 복수 개의 요소로 변환
 - flatXxx() 메소드는 하나의 요소를 복수 개의 요소들로 변환한 새로운 스트림을 반환한다.
+
+7. 요소 정렬
+- 요소를 오름차순 또는 내림차순으로 정렬하는 중간 처리 기능
+- sorted()
+
+7-1. Comparable 구현 객체의 정렬
+- 스트림의 요소가 객체일 경우 Comparable을 구현하고 있어야만 sorted() 메소드를 사용하여 정렬할 수 있다
+
+7-2. Comparator를 이용한 정렬
+- Comparable을 구현하고 있지 않다면 비교자 Comparator를 제공하면 요소를 정렬시킬 수 있다.
+
+8. 요소를 하나씩 처리(루핑)
+- 스트림에서 요소를 하나씩 반복해서 가져와 처리하는 것
+- peek(): 중간 처리 메소드
+- forEach(): 최종 처리 메소드
+
+9. 요소 조건 만족 여부(매칭)
+- allMatch(): 모든 요소가 만족하는지 여부
+- anyMatch(): 최소한 하나의 요소가 만족하는지 여부
+- noneMatch(): 모든 요소가 만족하는지 않는지 여부
+
+10. 요소 기본 집계
+- 집계: 최종 처리 기능으로 요소들을 처리해 카운팅, 합계, 평균값, 최대값, 최소값등과 같이 하나의 값으로 산출하는 것.
+메소드(매개변수) | 설명
+count()        | 요소 개수
+findFirst()    | 첫 번째 요소
+max()          | 최대 요소
+min()          | 최소 요소
+average()      | 요소 평균
+sum()          | 요소 총합
+
+10-1. Optional 클래스
+- OptionalXXX: 최종값을 저장하는 객체
+메소드(매개변수)      | 설명
+isPresent()         | 집계값이 있는지 여부
+orElse()            | 집계값이 없을 경우 디폴트 생성
+ifPresent(Consumer) | 집계값이 있을 경우 Consumer에서 처리
+
+11. 요소 커스텀 집계
+- reduce(identity, BinaryOperator);
+- BinaryOperator: 두 개의 값을 받아 하나의 값을 리턴하는 apply() 메소드를 가진 함수형 인터페이스
+- identity: 디폴트 값
+
+12. 요소 수집
+- collect(): 요소를 필터링 또는 매핑한 후 요소들을 수집하는 최종 처리 메소드
+
+12-1. 필터링한 요소 수집
+- Stream 인터페이스의 collect(Collector<T, A, R> collector)
+- 요소(T)를 누적기(A)가 R에 저장한다.
+- 구현 객체(Collectors 정적 메소드)
+리턴 타입                   | 메소드                                                        | 설명
+Collector<T, ?, List<T>>   | toList()                                                     | T를 List에 저장
+Collector<T, ?, Set<T>>    | toSet()                                                      | T를 Set에 저장
+Collector<T, ?, Map<K, U>> | toMap( Function<T, K> keyMapper, Function<T, U> valueMapper) | T를 K와 U로 매핑하여 K를 키로 U를 값으로 Map애 저장
+
+12-2. 요소 그룹핑
+리턴 타입                         | 메소드
+Collector<T, ?, Map<K, List<T>>> | groupingBy(Function<T, K> classifier)
+- Function을 이용해서 T를 K로 매핑하고, K를 키로 하는 List<T>를 값으로 갖는 Map 컬렉션을 생성한다.
+- 동일한 키에 해당하는 여러 요소가 하나의 리스트에 담겨 Map의 값으로 저장된다.
+- groupingBy() 두 번째 매개값 Collectors 정적 메소드
+메소드(매개변수)                       | 설명
+mapping(Function, Collector)         | 매핑
+averagingDouble(ToDoubleFunction)    | 요소 평균
+counting()                           | 요소 수
+maxBy(Comparator)                    | 최대값
+minBy(Comparator)                    | 최소값
+reducing(T identity, BinaryOperator) | 커스텀 집계 값
+
+13. 요소 병렬 처리
+
+13-1. 동시성과 병렬성
+- 동시성: 멀티 스레드가 하나의 코어에서 번갈아가며 실행 하는 것
+- 병렬성: 멀티 코어를 각각 이용해서 병렬로 실행하는 것
+-- 데이터 병렬성(병렬 스트림): 전체 데이터를 분할해서 만든 서브 데이터셋을 병렬 처리해서 작업을 빨리 끝내는 것
+
+13-2. 포크조인 프레임워크
+- 포크 단계: 전체 요소들을 서브 요소셋으로 분할
+- 멀티 코어: 각 서브 요소셋을 병렬로 처리
+- 조인 단계: 서브 결과를 종합해서 최종 결과 산출
+-- 작업 스레드 관리: ForkJoinPool
+
+13-3. 병렬 스트림 사용
+- parallelStream(): 컬렉션으로부터 병렬 스트림을 바로 리턴한다.
+- parallel(): 기존 스트림을 병렬 처리 스트림으로 변환한다.
