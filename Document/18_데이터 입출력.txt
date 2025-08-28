@@ -62,5 +62,52 @@ void | close()           | 입력 스트림을 닫고 메모리 사용 해제
 - OutputStreamWriter(OutputStream): OutputStream을 Writer로 변환
 
 7. 성능 향상 스트림
-- 
+- 버퍼: 여러 개의 작은 데이터 전송 요청을 모아서 한 번에 처리함으로써, 입출력(I/O) 오버헤드를 줄여 시스템의 전체 성능을 높입니다.
+- 메모리 버퍼를 활용하여 성능을 향상시키는 보조 스트림
+-- 바이트 스트림: BufferedInputStream, BufferedOutputStream
+-- 문자 스트림: BufferedReader, BufferedWriter
 
+- BufferedReader.readLine(): 문자열을 행 단위로 읽는 메소드
+
+8. 기본 타입 스트림
+- DateInputSteam, DataOutputStream이라는 보조 스트림을 연결하면 기본 타입 값을 입출력 할 수 있다.
+- read{Type}(), write{Type}() 메소드를 지닌다.
+
+9. 프린트 스트림
+- PrintStream, PrintWriter
+-- 메소드
+- print()
+- println()
+- printf()
+
+10. 객체 스트림
+- 직렬화(ObjectOutputStream): 객체의 필드값을 일렬로 나열된 바이트 값으로 변경
+- 역직렬화(ObjectInputStream): 직렬화된 바이트를 객체의 필드값으로 복원
+-- 직렬화 메소드: wroteObject(객체)
+-- 역직렬화 메소드: readObject(객체)
+--- Object 타입을 리턴한다.
+
+10-1. Serializable 인터페이스
+- 클래스를 직렬화할 때 필수적으로 필요하다.
+-- 정적 필드값과 transient로 선언된 필드값은 직렬화 대상에서 제외된다.
+
+10-2. serialVersionUID 필드
+- 기본적으로 직렬화 클래스와 역직렬화 클래스가 동일한 클래스가 아니라면 역직렬화에 실패한다.
+-- 두 클래스가 동일한 serialVersionUID 상수값을 지닌다면 직렬화된 필드를 공통으로 가지고 있다면 역직렬화 할 수 있다.
+
+11. File과 Files 클래스
+- Files는 File을 개선한 클래스이다.
+
+11-1. File 클래스
+- new File(경로)
+-- 경로에 파일이 실제로 있는지 확인하려면 exist() 메소드를 호출하면 된다.
+--- false = exist()인 경우에 사용할 수 있는 파일 생성 메소드
+- boolean | createNewFile(): 새로운 파일 생성
+- boolean | mkdir(): 새로운 디렉토리 생성
+- boolean | mkdirs(): 경로상에 없는 모든 디렉토리 생성
+
+11-2. Files 클래스
+- 정적 매소드로 구성되어 있다.
+- Files 클래스의 모든 메소드는 매개값으로 Path 객체를 받는다.
+- Path 객체: 파일이나 디렉토리를 찾기 위한 경로 정보
+-- Path path = Path.get(파일 경로)

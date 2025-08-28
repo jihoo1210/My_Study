@@ -1,0 +1,60 @@
+1. 네트워크 기초
+- 네트워크: 여러 컴퓨터들을 통신 회선으로 연결한 것
+- LAN(Local Area Network): 특정 영역 안에 존재하는 컴퓨터들을 연결한 것
+- WAN(Wide Area Network): LAN들을 연결한 것
+
+1-1. 서버와 클라이언트
+- 서버: 서비스를 제공하는 프로그램
+- 클라이언트(웹 브라우저): 서비스를 요청하는 프로그램
+
+1-2. IP 주소
+- 네트워크 어댑터(LAN 카드)마다 할당되는 컴퓨터의 고유 주소
+- 프로그램은 DNS(Domain Name System)을 이용해서 컴퓨터의 IP 주소를 검색한다.
+- 도메인 이름: IP를 등록하는 저장소
+
+1-3. Port 번호
+- Port: 운영체제가 관리하는 서버 프로그램의 연결 번호
+- 클라이언트의 Port: 서버의 Port처럼 고정적이지 않고, 운영체제가 자동으로 부여한다.
+- Port 번호 사용 범위
+- 0 ~ 1023: 국제인터넷주소관리기구가 특정 애플리케이션 용으로 미리 예약한 Port
+- 1024 ~ 49151: 회사에서 등록하여 사용할 수 있는 Port
+- 49152 ~ 66535: 운영체제가 부여하는 동적 Port 또는 개인적인 목적으로 사용할 수 있는 Port
+
+2. IP 주소 얻기
+- InetAddress 객체 얻기
+- InetAddress.getLocalHost();
+- InetAddress.getByName(String domainName);
+- InetAddress 객체로부터 IP 주소 얻기
+- InetAddress.getHostAddress();
+
+3. TCP 네트워킹
+- 전송용 프로토콜: IP 주소로 프로그램들이 통신할 때 약속한 전송 규약
+- TCP: 연결형 프로토콜.
+-- 연결된 상태, 즉 고정된 통신 회선으로 데이터가 전달된다.
+-- ServerSocket: 서버가 클라이언트의 연결을 수락할 때 사용
+-- Socket: 클라이언트에서 연결을 요청할 때, 클라이언트와 서버 양쪽에서 데이터를 주고받을 때 사용 
+
+3-1. TCP 서버
+- TCP 서버 열기: new ServerSocket(Port);
+- 연결 요청 수락 및 통신용 Socket 생성: ServerSocket.accept();
+-- 블로킹을 해제하고 통신용 Socket을 리턴한다.
+- TCP 서버 종료: ServerSocket.close();
+
+3-2. TCP 클라이언트
+- 서버 연결 요청: new Socket("IP", Port);
+- 서버 연결 끊기: socket.close();
+
+3-3. 입출력 스트립으로 주고받기
+- Socket 객체로부터 입출력 스트림 얻기: socket.getIn(Out)putStream();
+- 데이터를 보낼 때: OutputStream의 write의 매개값으로 보낼 데이터가 들어간 byte[] 배열을 주면 된다.
+- 데이터를 받을 때: InputStream의 read의 매개값으로 받을 데이터가 들어간 byte[] 배열을 주면 된다.
+
+4. UDP 네트워킹
+- UDP: 발신자가 일방적으로 수신자에게 데이터를 보내는 방식
+-- 고정 회선이 아니라 여러 회선을 통해 데이터를 전송한다.
+- DatagramSocket: 발신점과 수신점
+- DatagramPacket: 주고받는 데이터
+
+- UDP 서버
+- UDP 서버 열기: new DatagramSocket(Port);
+- 연결 요청 수락 및 데이터 수신: DatagramSocket.recive(new DatagramPacket(데이터를 저장할 배열, 수신할 수 있는 최대 바이트 수));
