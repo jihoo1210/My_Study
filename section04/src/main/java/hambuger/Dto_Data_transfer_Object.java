@@ -1,7 +1,7 @@
 package hambuger;
 
 import java.sql.Timestamp;
-
+// 순수한 데이터 객체
 public class Dto_Data_transfer_Object {
 	private int id;
 	private String size;
@@ -13,10 +13,10 @@ public class Dto_Data_transfer_Object {
 		
 		public int getTotal() {
 		return total;
-	}
-	public void setTotal(int total) {
+		}
+		public void setTotal(int total) {
 		this.total = total;
-	}
+		}
 		public int getId() {
 			return id;
 		}

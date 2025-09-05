@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+  <Resource 
+     name="jdbc/bbs1"  
+     auth="Container"  
+     type="javax.sql.DataSource"
+     driverClassName="com.mysql.cj.jdbc.Driver"
+     url="jdbc:mysql://localhost:3306/bbs1?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Seoul"
+     username="root"
+     password="jungmin6398"
+     maxTotal="20" 
+     maxIdle="10" 
+     maxWaitMillis="10000" 
+     testOnBorrow = "true"  
+  />
+</Context>

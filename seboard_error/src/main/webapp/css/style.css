@@ -1,0 +1,134 @@
+body{
+    font-family: "Gowun Batang", serif;
+    font-size:1.1rem;
+    font-weight:400;
+}
+.noto{
+     font-family: "Noto Sans KR", sans-serif;
+}
+a,a.page-link{
+    text-decoration:none;
+    color:#333;
+}
+a:hover,a.page-link:hover{
+    text-decoration:underline;
+    color:#666;
+}
+aside{
+    height: 100vh;
+    background:#ededed;
+}
+.logged{
+	border: 5px solid #ddd;
+	background:#fff;
+	padding:40px;
+	font-weight:bold;
+}
+.logged a{
+	font-size:14px;
+	font-weight:400;
+}
+/*********** LIST **********/
+.page-info{
+    margin-top:50px;
+    font-weight:bold;
+}
+.page-info span>span{
+    color:rgb(177, 33, 33);
+}
+.table-container table{
+   border-top: 2px solid #333;
+}
+th, td{ text-align:center; }
+td{ padding-left:15px; }
+#searchform .form-select{
+    width:25% !important;
+    border-right:none;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+}
+#searchform .form-control{
+    width: 50%;
+    border-radius:0;
+    border-right:none;
+}
+#searchform .btn.btn-dark{
+    width: 25%;
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+}  
+
+/**************** view *******************/
+.view{
+    margin-top:100px;
+}
+.title{
+    padding:10px 15px;
+    border-top:2px solid #333;
+    border-bottom:2px solid #ddd;
+    font-size:1.3em;
+    font-weight:bold;
+}
+.view span{
+    display:inline-block;
+    width: 120px;
+    padding: 10px 15px;
+    background-color:#eee;
+    font-weight:bold;
+}
+.view .content{
+    padding:40px;
+    border-bottom:1px solid #dee2e6;
+    margin-bottom:20px;
+}
+
+/************ 글쓰기 **********/
+.writeform label.title-label{
+    width:160px;
+}
+.writeform .col-title{
+    width: calc(100% - 180px);
+}
+.h-300{
+    height:300px;
+}
+.writeform .ms-140{
+	margin-left:140px;
+}
+
+/********* 회원가입 ***********/
+#post{
+	border-top-right-radius: 0;
+	border-bottom-right-radius:0;
+	border-right:none;
+}
+#post-btn{
+	border-top-left-radius: 0;
+	border-bottom-left-radius:0;
+}
+.hidden-error{
+	display:none;
+}
+
+/*********** 로그인 ***************/
+form.loginform{
+	margin: 30px auto;
+	width: 60%;
+	border:3px solid #ddd;
+	padding:60px;
+}
+
+.errorbox{
+	margin: 100px auto 0;
+	width:60%;
+}
+
+
+
+
+
+
+
+
+
+
